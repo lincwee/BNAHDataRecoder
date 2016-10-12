@@ -14,6 +14,9 @@
 		574232391DAE16D2005D5931 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 574232371DAE16D2005D5931 /* LaunchScreen.storyboard */; };
 		574232441DAE16D2005D5931 /* BNAHDataRecoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574232431DAE16D2005D5931 /* BNAHDataRecoderTests.swift */; };
 		5742324F1DAE16D2005D5931 /* BNAHDataRecoderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5742324E1DAE16D2005D5931 /* BNAHDataRecoderUITests.swift */; };
+		574232651DAE24AB005D5931 /* AHTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574232641DAE24AB005D5931 /* AHTabBarController.swift */; };
+		57B82B431DAE29A10074BD97 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B82B421DAE29A10074BD97 /* HomeVC.swift */; };
+		57B82B471DAE32550074BD97 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B82B461DAE32550074BD97 /* UIView+Layout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		5742324A1DAE16D2005D5931 /* BNAHDataRecoderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BNAHDataRecoderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5742324E1DAE16D2005D5931 /* BNAHDataRecoderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNAHDataRecoderUITests.swift; sourceTree = "<group>"; };
 		574232501DAE16D2005D5931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		574232641DAE24AB005D5931 /* AHTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHTabBarController.swift; sourceTree = "<group>"; };
+		57B82B421DAE29A10074BD97 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		57B82B461DAE32550074BD97 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Layout.swift"; path = "Category/UIView+Layout.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 		5742322D1DAE16D2005D5931 /* BNAHDataRecoder */ = {
 			isa = PBXGroup;
 			children = (
+				5742325C1DAE1A4B005D5931 /* SRC */,
 				5742322E1DAE16D2005D5931 /* AppDelegate.swift */,
 				574232301DAE16D2005D5931 /* ViewController.swift */,
 				574232321DAE16D2005D5931 /* Main.storyboard */,
@@ -123,6 +130,64 @@
 				574232501DAE16D2005D5931 /* Info.plist */,
 			);
 			path = BNAHDataRecoderUITests;
+			sourceTree = "<group>";
+		};
+		5742325C1DAE1A4B005D5931 /* SRC */ = {
+			isa = PBXGroup;
+			children = (
+				5742325F1DAE1A4B005D5931 /* HomePage */,
+				5742325D1DAE1A4B005D5931 /* Common */,
+				574232601DAE1A4B005D5931 /* Utils */,
+			);
+			path = SRC;
+			sourceTree = "<group>";
+		};
+		5742325D1DAE1A4B005D5931 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				574232631DAE2468005D5931 /* AppRoot */,
+				5742325E1DAE1A4B005D5931 /* Network */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		5742325E1DAE1A4B005D5931 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5742325F1DAE1A4B005D5931 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				57B82B421DAE29A10074BD97 /* HomeVC.swift */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		574232601DAE1A4B005D5931 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				57B82B451DAE2FE90074BD97 /* Category */,
+				57B82B461DAE32550074BD97 /* UIView+Layout.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		574232631DAE2468005D5931 /* AppRoot */ = {
+			isa = PBXGroup;
+			children = (
+				574232641DAE24AB005D5931 /* AHTabBarController.swift */,
+			);
+			path = AppRoot;
+			sourceTree = "<group>";
+		};
+		57B82B451DAE2FE90074BD97 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +325,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				574232311DAE16D2005D5931 /* ViewController.swift in Sources */,
+				57B82B431DAE29A10074BD97 /* HomeVC.swift in Sources */,
 				5742322F1DAE16D2005D5931 /* AppDelegate.swift in Sources */,
+				574232651DAE24AB005D5931 /* AHTabBarController.swift in Sources */,
+				57B82B471DAE32550074BD97 /* UIView+Layout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +571,7 @@
 				574232551DAE16D2005D5931 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		574232561DAE16D2005D5931 /* Build configuration list for PBXNativeTarget "BNAHDataRecoderTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +580,7 @@
 				574232581DAE16D2005D5931 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		574232591DAE16D2005D5931 /* Build configuration list for PBXNativeTarget "BNAHDataRecoderUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +589,7 @@
 				5742325B1DAE16D2005D5931 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
