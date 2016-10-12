@@ -10,15 +10,29 @@ import UIKit
 
 class HomeVC: UIViewController {
 
+    var buttomItem = UIButton()
+    var buttonHot = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-//        self.view.backgroundColor = UIColor.white;
-//        let view = UIView.init(frame: CGRect(x: 0, y: 100, width: 100, height: 50));
-//        view.backgroundColor = UIColor.black;
-//        self.view.addSubview(view);
-//        view.left = 50;
-//        view.centerX = self.view.width / 2;
+        self.view.backgroundColor = UIColor.white
+        self.buttomItem.width = self.view.width / 2
+        self.buttomItem.height = 30
+        self.buttonHot.width = self.buttomItem.width
+        self.buttonHot.height = self.buttomItem.height
+        
+        self.buttomItem.left = 0;
+        self.buttomItem.top = kNaviTopViewH;
+        self.buttonHot.left = self.buttomItem.right
+        self.buttonHot.top = self.buttomItem.top
+        
+        self.buttomItem.setTitle("物品查询", for: UIControlState.normal)
+        self.buttomItem.setTitleColor(UIColor.black, for: UIControlState.normal)
+        self.buttonHot.setTitle("其他", for: UIControlState.normal)
+        self.buttonHot.setTitleColor(UIColor.gray, for: UIControlState.normal);
+        
+        self.view.addSubview(self.buttomItem)
+        self.view.addSubview(self.buttonHot)
     }
 
     override func didReceiveMemoryWarning() {

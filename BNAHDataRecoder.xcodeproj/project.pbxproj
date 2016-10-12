@@ -17,6 +17,7 @@
 		574232651DAE24AB005D5931 /* AHTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574232641DAE24AB005D5931 /* AHTabBarController.swift */; };
 		57B82B431DAE29A10074BD97 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B82B421DAE29A10074BD97 /* HomeVC.swift */; };
 		57B82B471DAE32550074BD97 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B82B461DAE32550074BD97 /* UIView+Layout.swift */; };
+		57B82B491DAE476A0074BD97 /* CommonDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B82B481DAE476A0074BD97 /* CommonDef.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +53,8 @@
 		574232501DAE16D2005D5931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		574232641DAE24AB005D5931 /* AHTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHTabBarController.swift; sourceTree = "<group>"; };
 		57B82B421DAE29A10074BD97 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		57B82B461DAE32550074BD97 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Layout.swift"; path = "Category/UIView+Layout.swift"; sourceTree = "<group>"; };
+		57B82B461DAE32550074BD97 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		57B82B481DAE476A0074BD97 /* CommonDef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDef.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			children = (
 				574232631DAE2468005D5931 /* AppRoot */,
 				5742325E1DAE1A4B005D5931 /* Network */,
+				57B82B481DAE476A0074BD97 /* CommonDef.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -170,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				57B82B451DAE2FE90074BD97 /* Category */,
-				57B82B461DAE32550074BD97 /* UIView+Layout.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -186,6 +188,7 @@
 		57B82B451DAE2FE90074BD97 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				57B82B461DAE32550074BD97 /* UIView+Layout.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57B82B491DAE476A0074BD97 /* CommonDef.swift in Sources */,
 				574232311DAE16D2005D5931 /* ViewController.swift in Sources */,
 				57B82B431DAE29A10074BD97 /* HomeVC.swift in Sources */,
 				5742322F1DAE16D2005D5931 /* AppDelegate.swift in Sources */,
