@@ -1,0 +1,526 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5742322F1DAE16D2005D5931 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5742322E1DAE16D2005D5931 /* AppDelegate.swift */; };
+		574232311DAE16D2005D5931 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574232301DAE16D2005D5931 /* ViewController.swift */; };
+		574232341DAE16D2005D5931 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 574232321DAE16D2005D5931 /* Main.storyboard */; };
+		574232361DAE16D2005D5931 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 574232351DAE16D2005D5931 /* Assets.xcassets */; };
+		574232391DAE16D2005D5931 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 574232371DAE16D2005D5931 /* LaunchScreen.storyboard */; };
+		574232441DAE16D2005D5931 /* BNAHDataRecoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574232431DAE16D2005D5931 /* BNAHDataRecoderTests.swift */; };
+		5742324F1DAE16D2005D5931 /* BNAHDataRecoderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5742324E1DAE16D2005D5931 /* BNAHDataRecoderUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		574232401DAE16D2005D5931 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 574232231DAE16D2005D5931 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5742322A1DAE16D2005D5931;
+			remoteInfo = BNAHDataRecoder;
+		};
+		5742324B1DAE16D2005D5931 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 574232231DAE16D2005D5931 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5742322A1DAE16D2005D5931;
+			remoteInfo = BNAHDataRecoder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5742322B1DAE16D2005D5931 /* BNAHDataRecoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BNAHDataRecoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5742322E1DAE16D2005D5931 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		574232301DAE16D2005D5931 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		574232331DAE16D2005D5931 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		574232351DAE16D2005D5931 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		574232381DAE16D2005D5931 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5742323A1DAE16D2005D5931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5742323F1DAE16D2005D5931 /* BNAHDataRecoderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BNAHDataRecoderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		574232431DAE16D2005D5931 /* BNAHDataRecoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNAHDataRecoderTests.swift; sourceTree = "<group>"; };
+		574232451DAE16D2005D5931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5742324A1DAE16D2005D5931 /* BNAHDataRecoderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BNAHDataRecoderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5742324E1DAE16D2005D5931 /* BNAHDataRecoderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNAHDataRecoderUITests.swift; sourceTree = "<group>"; };
+		574232501DAE16D2005D5931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		574232281DAE16D2005D5931 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5742323C1DAE16D2005D5931 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		574232471DAE16D2005D5931 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		574232221DAE16D2005D5931 = {
+			isa = PBXGroup;
+			children = (
+				5742322D1DAE16D2005D5931 /* BNAHDataRecoder */,
+				574232421DAE16D2005D5931 /* BNAHDataRecoderTests */,
+				5742324D1DAE16D2005D5931 /* BNAHDataRecoderUITests */,
+				5742322C1DAE16D2005D5931 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5742322C1DAE16D2005D5931 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5742322B1DAE16D2005D5931 /* BNAHDataRecoder.app */,
+				5742323F1DAE16D2005D5931 /* BNAHDataRecoderTests.xctest */,
+				5742324A1DAE16D2005D5931 /* BNAHDataRecoderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5742322D1DAE16D2005D5931 /* BNAHDataRecoder */ = {
+			isa = PBXGroup;
+			children = (
+				5742322E1DAE16D2005D5931 /* AppDelegate.swift */,
+				574232301DAE16D2005D5931 /* ViewController.swift */,
+				574232321DAE16D2005D5931 /* Main.storyboard */,
+				574232351DAE16D2005D5931 /* Assets.xcassets */,
+				574232371DAE16D2005D5931 /* LaunchScreen.storyboard */,
+				5742323A1DAE16D2005D5931 /* Info.plist */,
+			);
+			path = BNAHDataRecoder;
+			sourceTree = "<group>";
+		};
+		574232421DAE16D2005D5931 /* BNAHDataRecoderTests */ = {
+			isa = PBXGroup;
+			children = (
+				574232431DAE16D2005D5931 /* BNAHDataRecoderTests.swift */,
+				574232451DAE16D2005D5931 /* Info.plist */,
+			);
+			path = BNAHDataRecoderTests;
+			sourceTree = "<group>";
+		};
+		5742324D1DAE16D2005D5931 /* BNAHDataRecoderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5742324E1DAE16D2005D5931 /* BNAHDataRecoderUITests.swift */,
+				574232501DAE16D2005D5931 /* Info.plist */,
+			);
+			path = BNAHDataRecoderUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5742322A1DAE16D2005D5931 /* BNAHDataRecoder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 574232531DAE16D2005D5931 /* Build configuration list for PBXNativeTarget "BNAHDataRecoder" */;
+			buildPhases = (
+				574232271DAE16D2005D5931 /* Sources */,
+				574232281DAE16D2005D5931 /* Frameworks */,
+				574232291DAE16D2005D5931 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BNAHDataRecoder;
+			productName = BNAHDataRecoder;
+			productReference = 5742322B1DAE16D2005D5931 /* BNAHDataRecoder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5742323E1DAE16D2005D5931 /* BNAHDataRecoderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 574232561DAE16D2005D5931 /* Build configuration list for PBXNativeTarget "BNAHDataRecoderTests" */;
+			buildPhases = (
+				5742323B1DAE16D2005D5931 /* Sources */,
+				5742323C1DAE16D2005D5931 /* Frameworks */,
+				5742323D1DAE16D2005D5931 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				574232411DAE16D2005D5931 /* PBXTargetDependency */,
+			);
+			name = BNAHDataRecoderTests;
+			productName = BNAHDataRecoderTests;
+			productReference = 5742323F1DAE16D2005D5931 /* BNAHDataRecoderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		574232491DAE16D2005D5931 /* BNAHDataRecoderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 574232591DAE16D2005D5931 /* Build configuration list for PBXNativeTarget "BNAHDataRecoderUITests" */;
+			buildPhases = (
+				574232461DAE16D2005D5931 /* Sources */,
+				574232471DAE16D2005D5931 /* Frameworks */,
+				574232481DAE16D2005D5931 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5742324C1DAE16D2005D5931 /* PBXTargetDependency */,
+			);
+			name = BNAHDataRecoderUITests;
+			productName = BNAHDataRecoderUITests;
+			productReference = 5742324A1DAE16D2005D5931 /* BNAHDataRecoderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		574232231DAE16D2005D5931 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = lincwee;
+				TargetAttributes = {
+					5742322A1DAE16D2005D5931 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					5742323E1DAE16D2005D5931 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5742322A1DAE16D2005D5931;
+					};
+					574232491DAE16D2005D5931 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5742322A1DAE16D2005D5931;
+					};
+				};
+			};
+			buildConfigurationList = 574232261DAE16D2005D5931 /* Build configuration list for PBXProject "BNAHDataRecoder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 574232221DAE16D2005D5931;
+			productRefGroup = 5742322C1DAE16D2005D5931 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5742322A1DAE16D2005D5931 /* BNAHDataRecoder */,
+				5742323E1DAE16D2005D5931 /* BNAHDataRecoderTests */,
+				574232491DAE16D2005D5931 /* BNAHDataRecoderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		574232291DAE16D2005D5931 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				574232391DAE16D2005D5931 /* LaunchScreen.storyboard in Resources */,
+				574232361DAE16D2005D5931 /* Assets.xcassets in Resources */,
+				574232341DAE16D2005D5931 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5742323D1DAE16D2005D5931 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		574232481DAE16D2005D5931 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		574232271DAE16D2005D5931 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				574232311DAE16D2005D5931 /* ViewController.swift in Sources */,
+				5742322F1DAE16D2005D5931 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5742323B1DAE16D2005D5931 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				574232441DAE16D2005D5931 /* BNAHDataRecoderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		574232461DAE16D2005D5931 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5742324F1DAE16D2005D5931 /* BNAHDataRecoderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		574232411DAE16D2005D5931 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5742322A1DAE16D2005D5931 /* BNAHDataRecoder */;
+			targetProxy = 574232401DAE16D2005D5931 /* PBXContainerItemProxy */;
+		};
+		5742324C1DAE16D2005D5931 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5742322A1DAE16D2005D5931 /* BNAHDataRecoder */;
+			targetProxy = 5742324B1DAE16D2005D5931 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		574232321DAE16D2005D5931 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				574232331DAE16D2005D5931 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		574232371DAE16D2005D5931 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				574232381DAE16D2005D5931 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		574232511DAE16D2005D5931 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		574232521DAE16D2005D5931 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		574232541DAE16D2005D5931 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BNAHDataRecoder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lincwee.BNAHDataRecoder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		574232551DAE16D2005D5931 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BNAHDataRecoder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lincwee.BNAHDataRecoder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		574232571DAE16D2005D5931 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BNAHDataRecoderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lincwee.BNAHDataRecoderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BNAHDataRecoder.app/BNAHDataRecoder";
+			};
+			name = Debug;
+		};
+		574232581DAE16D2005D5931 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BNAHDataRecoderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lincwee.BNAHDataRecoderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BNAHDataRecoder.app/BNAHDataRecoder";
+			};
+			name = Release;
+		};
+		5742325A1DAE16D2005D5931 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = BNAHDataRecoderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lincwee.BNAHDataRecoderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = BNAHDataRecoder;
+			};
+			name = Debug;
+		};
+		5742325B1DAE16D2005D5931 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = BNAHDataRecoderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lincwee.BNAHDataRecoderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = BNAHDataRecoder;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		574232261DAE16D2005D5931 /* Build configuration list for PBXProject "BNAHDataRecoder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				574232511DAE16D2005D5931 /* Debug */,
+				574232521DAE16D2005D5931 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		574232531DAE16D2005D5931 /* Build configuration list for PBXNativeTarget "BNAHDataRecoder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				574232541DAE16D2005D5931 /* Debug */,
+				574232551DAE16D2005D5931 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		574232561DAE16D2005D5931 /* Build configuration list for PBXNativeTarget "BNAHDataRecoderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				574232571DAE16D2005D5931 /* Debug */,
+				574232581DAE16D2005D5931 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		574232591DAE16D2005D5931 /* Build configuration list for PBXNativeTarget "BNAHDataRecoderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5742325A1DAE16D2005D5931 /* Debug */,
+				5742325B1DAE16D2005D5931 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 574232231DAE16D2005D5931 /* Project object */;
+}
