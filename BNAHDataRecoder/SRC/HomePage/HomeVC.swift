@@ -10,32 +10,70 @@ import UIKit
 
 class HomeVC: UIViewController {
 
-    var buttomItem = UIButton()
+    var buttonItem = UIButton()
     var buttonHot = UIButton()
+    var buttonSelectedIndex : NSInteger?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
-        self.buttomItem.width = self.view.width / 2
-        self.buttomItem.height = 30
-        self.buttonHot.width = self.buttomItem.width
-        self.buttonHot.height = self.buttomItem.height
         
-        self.buttomItem.left = 0;
-        self.buttomItem.top = kNaviTopViewH;
-        self.buttonHot.left = self.buttomItem.right
-        self.buttonHot.top = self.buttomItem.top
+        let radioButton = AHRadioButtonView.init(frame: CGRect.init(x: 0, y: kNaviTopViewH, width: self.view.width, height: 30), itemNameList: ["物品查询", "其他"])
+        self.view .addSubview(radioButton)
+       // initButton()
         
-        self.buttomItem.setTitle("物品查询", for: UIControlState.normal)
-        self.buttomItem.setTitleColor(UIColor.black, for: UIControlState.normal)
-        self.buttonHot.setTitle("其他", for: UIControlState.normal)
-        self.buttonHot.setTitleColor(UIColor.gray, for: UIControlState.normal);
+    }
+    
+    func initButton() {
+        buttonItem.width = self.view.width / 2
+        buttonItem.height = 30
+        buttonHot.width = self.buttonItem.width
+        buttonHot.height = self.buttonItem.height
+        buttonItem.tag = 0
+        buttonHot.tag = 1
         
-        self.view.addSubview(self.buttomItem)
-        self.view.addSubview(self.buttonHot)
+        buttonItem.left = 0;
+        buttonItem.top = kNaviTopViewH;
+        buttonHot.left = self.buttonItem.right
+        buttonHot.top = self.buttonItem.top
+        buttonItem.isSelected = true
+        
+        buttonItem.setTitle("物品查询", for: .normal)
+        buttonHot.setTitle("其他", for: .normal)
+        
+        buttonItem.setTitleColor(UIColor.black, for: .normal)
+        buttonItem.setTitleColor(UIColor.gray, for: .highlighted)
+        buttonItem.setTitleColor(UIColor.gray, for: .selected)
+        buttonItem.setTitleColor(UIColor.gray, for: .disabled)
+        buttonHot.setTitleColor(UIColor.black, for: .normal);
+        buttonHot.setTitleColor(UIColor.gray, for: .highlighted)
+        buttonHot.setTitleColor(UIColor.gray, for: .selected)
+        buttonHot.setTitleColor(UIColor.gray, for: .disabled)
+        
+        buttonHot.addTarget(self, action: #selector(onButtonClicked(button:)), for: .touchUpInside)
+        buttonItem.addTarget(self, action: #selector(onButtonClicked(button:)), for: .touchUpInside)
+        
+        view.addSubview(self.buttonItem)
+        view.addSubview(self.buttonHot)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func onButtonClicked(button : UIButton!) -> Void {
+     
+        buttonSelectedIndex = button.tag
+        buttonItem.isSelected = button.tag == 0
+        buttonHot.isSelected = button.tag == 1
+        if button.tag == 0 {
+            print("===========0");
+        }
+        else if button.tag == 1 {
+            print("===========1");
+        }
+        else {
+            
+        }
     }
 }

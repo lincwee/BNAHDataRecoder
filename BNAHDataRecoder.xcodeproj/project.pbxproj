@@ -15,6 +15,7 @@
 		574232441DAE16D2005D5931 /* BNAHDataRecoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574232431DAE16D2005D5931 /* BNAHDataRecoderTests.swift */; };
 		5742324F1DAE16D2005D5931 /* BNAHDataRecoderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5742324E1DAE16D2005D5931 /* BNAHDataRecoderUITests.swift */; };
 		574232651DAE24AB005D5931 /* AHTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574232641DAE24AB005D5931 /* AHTabBarController.swift */; };
+		577EE07F1DAF674500288242 /* AHRadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577EE07E1DAF674500288242 /* AHRadioButtonView.swift */; };
 		57B82B431DAE29A10074BD97 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B82B421DAE29A10074BD97 /* HomeVC.swift */; };
 		57B82B471DAE32550074BD97 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B82B461DAE32550074BD97 /* UIView+Layout.swift */; };
 		57B82B491DAE476A0074BD97 /* CommonDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B82B481DAE476A0074BD97 /* CommonDef.swift */; };
@@ -52,6 +53,7 @@
 		5742324E1DAE16D2005D5931 /* BNAHDataRecoderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNAHDataRecoderUITests.swift; sourceTree = "<group>"; };
 		574232501DAE16D2005D5931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		574232641DAE24AB005D5931 /* AHTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHTabBarController.swift; sourceTree = "<group>"; };
+		577EE07E1DAF674500288242 /* AHRadioButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHRadioButtonView.swift; sourceTree = "<group>"; };
 		57B82B421DAE29A10074BD97 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		57B82B461DAE32550074BD97 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		57B82B481DAE476A0074BD97 /* CommonDef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDef.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		574232601DAE1A4B005D5931 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				577EE07D1DAF671800288242 /* View */,
 				57B82B451DAE2FE90074BD97 /* Category */,
 			);
 			path = Utils;
@@ -183,6 +186,14 @@
 				574232641DAE24AB005D5931 /* AHTabBarController.swift */,
 			);
 			path = AppRoot;
+			sourceTree = "<group>";
+		};
+		577EE07D1DAF671800288242 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				577EE07E1DAF674500288242 /* AHRadioButtonView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		57B82B451DAE2FE90074BD97 /* Category */ = {
@@ -332,6 +343,7 @@
 				57B82B431DAE29A10074BD97 /* HomeVC.swift in Sources */,
 				5742322F1DAE16D2005D5931 /* AppDelegate.swift in Sources */,
 				574232651DAE24AB005D5931 /* AHTabBarController.swift in Sources */,
+				577EE07F1DAF674500288242 /* AHRadioButtonView.swift in Sources */,
 				57B82B471DAE32550074BD97 /* UIView+Layout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
