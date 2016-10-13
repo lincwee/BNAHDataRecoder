@@ -39,7 +39,7 @@ class AHTabBarController: UITabBarController, UITabBarControllerDelegate {
    
     
     internal func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-       var vc = self.viewControllers?[self.selectedIndex]
+       let vc = self.viewControllers?[self.selectedIndex]
        self.title = vc?.title
     }
     

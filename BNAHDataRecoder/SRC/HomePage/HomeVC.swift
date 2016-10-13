@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController, AHRadioButtonViewDelegate {
 
     var buttonItem = UIButton()
     var buttonHot = UIButton()
@@ -19,6 +19,7 @@ class HomeVC: UIViewController {
         self.view.backgroundColor = UIColor.white
         
         let radioButton = AHRadioButtonView.init(frame: CGRect.init(x: 0, y: kNaviTopViewH, width: self.view.width, height: 30), itemNameList: ["物品查询", "其他"])
+        radioButton.delegate = self
         self.view .addSubview(radioButton)
        // initButton()
         
@@ -75,5 +76,9 @@ class HomeVC: UIViewController {
         else {
             
         }
+    }
+    
+    func didSelectedIndex(index: NSInteger) {
+        print(index)
     }
 }
