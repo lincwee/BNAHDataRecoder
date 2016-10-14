@@ -120,7 +120,13 @@ extension UIView {
             return self.frame.size;
         }
     }
-    
-    
-    
+}
+
+
+extension UIView {
+    public func removeAllSubViews() {
+        for view in self.subviews {
+            view .removeFromSuperview()
+        }
+    }
 }
