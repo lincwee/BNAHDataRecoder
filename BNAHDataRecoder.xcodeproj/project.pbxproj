@@ -16,9 +16,13 @@
 		5742324F1DAE16D2005D5931 /* BNAHDataRecoderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5742324E1DAE16D2005D5931 /* BNAHDataRecoderUITests.swift */; };
 		574232651DAE24AB005D5931 /* AHTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574232641DAE24AB005D5931 /* AHTabBarController.swift */; };
 		577EE07F1DAF674500288242 /* AHRadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577EE07E1DAF674500288242 /* AHRadioButtonView.swift */; };
+		57B2BA4D1DB0CD0A00A44C68 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B2BA4C1DB0CD0A00A44C68 /* SDWebImage.framework */; };
 		57B82B431DAE29A10074BD97 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B82B421DAE29A10074BD97 /* HomeVC.swift */; };
 		57B82B471DAE32550074BD97 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B82B461DAE32550074BD97 /* UIView+Layout.swift */; };
 		57B82B491DAE476A0074BD97 /* CommonDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B82B481DAE476A0074BD97 /* CommonDef.swift */; };
+		89F4050028A92DAC28CB82B8 /* Pods_BNAHDataRecoderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C31F4F8F5A07517B6AE1349 /* Pods_BNAHDataRecoderTests.framework */; };
+		B6BB70633E1984692E0031E5 /* Pods_BNAHDataRecoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D9FCE890BB33E735FDE82E /* Pods_BNAHDataRecoder.framework */; };
+		B8F9AD6A9E038941CD2E5E42 /* Pods_BNAHDataRecoderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18895C46C0D34830B352FD9C /* Pods_BNAHDataRecoderUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0444C80E5DF4246CF559B902 /* Pods-BNAHDataRecoderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BNAHDataRecoderUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BNAHDataRecoderUITests/Pods-BNAHDataRecoderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0CE015FCB365C60E1B0EE428 /* Pods-BNAHDataRecoder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BNAHDataRecoder.release.xcconfig"; path = "Pods/Target Support Files/Pods-BNAHDataRecoder/Pods-BNAHDataRecoder.release.xcconfig"; sourceTree = "<group>"; };
+		18895C46C0D34830B352FD9C /* Pods_BNAHDataRecoderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BNAHDataRecoderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18D9FCE890BB33E735FDE82E /* Pods_BNAHDataRecoder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BNAHDataRecoder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5742322B1DAE16D2005D5931 /* BNAHDataRecoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BNAHDataRecoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5742322E1DAE16D2005D5931 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		574232301DAE16D2005D5931 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,9 +62,15 @@
 		574232501DAE16D2005D5931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		574232641DAE24AB005D5931 /* AHTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHTabBarController.swift; sourceTree = "<group>"; };
 		577EE07E1DAF674500288242 /* AHRadioButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHRadioButtonView.swift; sourceTree = "<group>"; };
+		57B2BA4C1DB0CD0A00A44C68 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Pods/../build/Debug-iphoneos/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
 		57B82B421DAE29A10074BD97 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		57B82B461DAE32550074BD97 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		57B82B481DAE476A0074BD97 /* CommonDef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDef.swift; sourceTree = "<group>"; };
+		5AA874BCC477249B50DA571D /* Pods-BNAHDataRecoderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BNAHDataRecoderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BNAHDataRecoderTests/Pods-BNAHDataRecoderTests.release.xcconfig"; sourceTree = "<group>"; };
+		7A923480ACDC2C523F015DE4 /* Pods-BNAHDataRecoder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BNAHDataRecoder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BNAHDataRecoder/Pods-BNAHDataRecoder.debug.xcconfig"; sourceTree = "<group>"; };
+		7B0B87A2B7AC6C5C8BEF433E /* Pods-BNAHDataRecoderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BNAHDataRecoderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BNAHDataRecoderTests/Pods-BNAHDataRecoderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7C31F4F8F5A07517B6AE1349 /* Pods_BNAHDataRecoderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BNAHDataRecoderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF4E9FAD115D06DCF063144D /* Pods-BNAHDataRecoderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BNAHDataRecoderUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BNAHDataRecoderUITests/Pods-BNAHDataRecoderUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57B2BA4D1DB0CD0A00A44C68 /* SDWebImage.framework in Frameworks */,
+				B6BB70633E1984692E0031E5 /* Pods_BNAHDataRecoder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89F4050028A92DAC28CB82B8 /* Pods_BNAHDataRecoderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,12 +95,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8F9AD6A9E038941CD2E5E42 /* Pods_BNAHDataRecoderUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4803F87425DC35835E41F5CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57B2BA4C1DB0CD0A00A44C68 /* SDWebImage.framework */,
+				18D9FCE890BB33E735FDE82E /* Pods_BNAHDataRecoder.framework */,
+				7C31F4F8F5A07517B6AE1349 /* Pods_BNAHDataRecoderTests.framework */,
+				18895C46C0D34830B352FD9C /* Pods_BNAHDataRecoderUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		574232221DAE16D2005D5931 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +120,8 @@
 				574232421DAE16D2005D5931 /* BNAHDataRecoderTests */,
 				5742324D1DAE16D2005D5931 /* BNAHDataRecoderUITests */,
 				5742322C1DAE16D2005D5931 /* Products */,
+				C975FE9BE2A855A68613BB98 /* Pods */,
+				4803F87425DC35835E41F5CB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -204,6 +235,19 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		C975FE9BE2A855A68613BB98 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7A923480ACDC2C523F015DE4 /* Pods-BNAHDataRecoder.debug.xcconfig */,
+				0CE015FCB365C60E1B0EE428 /* Pods-BNAHDataRecoder.release.xcconfig */,
+				7B0B87A2B7AC6C5C8BEF433E /* Pods-BNAHDataRecoderTests.debug.xcconfig */,
+				5AA874BCC477249B50DA571D /* Pods-BNAHDataRecoderTests.release.xcconfig */,
+				0444C80E5DF4246CF559B902 /* Pods-BNAHDataRecoderUITests.debug.xcconfig */,
+				CF4E9FAD115D06DCF063144D /* Pods-BNAHDataRecoderUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -211,9 +255,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 574232531DAE16D2005D5931 /* Build configuration list for PBXNativeTarget "BNAHDataRecoder" */;
 			buildPhases = (
+				67D89BCC48361AAD92BEFA62 /* [CP] Check Pods Manifest.lock */,
 				574232271DAE16D2005D5931 /* Sources */,
 				574232281DAE16D2005D5931 /* Frameworks */,
 				574232291DAE16D2005D5931 /* Resources */,
+				B407B1214254301EA2A0A9BA /* [CP] Embed Pods Frameworks */,
+				75E2A6316E901BADFC4632C8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -228,9 +275,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 574232561DAE16D2005D5931 /* Build configuration list for PBXNativeTarget "BNAHDataRecoderTests" */;
 			buildPhases = (
+				283E901EBE46AD4C808531A4 /* [CP] Check Pods Manifest.lock */,
 				5742323B1DAE16D2005D5931 /* Sources */,
 				5742323C1DAE16D2005D5931 /* Frameworks */,
 				5742323D1DAE16D2005D5931 /* Resources */,
+				552BEDDB21965155532A2A9F /* [CP] Embed Pods Frameworks */,
+				8ED85C608D2AD9D495D508F1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -246,9 +296,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 574232591DAE16D2005D5931 /* Build configuration list for PBXNativeTarget "BNAHDataRecoderUITests" */;
 			buildPhases = (
+				F992B1D9CA8DA84209B33333 /* [CP] Check Pods Manifest.lock */,
 				574232461DAE16D2005D5931 /* Sources */,
 				574232471DAE16D2005D5931 /* Frameworks */,
 				574232481DAE16D2005D5931 /* Resources */,
+				2FD0AE87E18714D28917F3FE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -332,6 +384,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		283E901EBE46AD4C808531A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2FD0AE87E18714D28917F3FE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BNAHDataRecoderUITests/Pods-BNAHDataRecoderUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		552BEDDB21965155532A2A9F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BNAHDataRecoderTests/Pods-BNAHDataRecoderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67D89BCC48361AAD92BEFA62 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		75E2A6316E901BADFC4632C8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BNAHDataRecoder/Pods-BNAHDataRecoder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8ED85C608D2AD9D495D508F1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BNAHDataRecoderTests/Pods-BNAHDataRecoderTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B407B1214254301EA2A0A9BA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BNAHDataRecoder/Pods-BNAHDataRecoder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F992B1D9CA8DA84209B33333 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		574232271DAE16D2005D5931 /* Sources */ = {
@@ -492,8 +667,13 @@
 		};
 		574232541DAE16D2005D5931 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A923480ACDC2C523F015DE4 /* Pods-BNAHDataRecoder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
+				);
 				INFOPLIST_FILE = BNAHDataRecoder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lincwee.BNAHDataRecoder;
@@ -504,8 +684,13 @@
 		};
 		574232551DAE16D2005D5931 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CE015FCB365C60E1B0EE428 /* Pods-BNAHDataRecoder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
+				);
 				INFOPLIST_FILE = BNAHDataRecoder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lincwee.BNAHDataRecoder;
@@ -516,6 +701,7 @@
 		};
 		574232571DAE16D2005D5931 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B0B87A2B7AC6C5C8BEF433E /* Pods-BNAHDataRecoderTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -530,6 +716,7 @@
 		};
 		574232581DAE16D2005D5931 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AA874BCC477249B50DA571D /* Pods-BNAHDataRecoderTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -544,6 +731,7 @@
 		};
 		5742325A1DAE16D2005D5931 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0444C80E5DF4246CF559B902 /* Pods-BNAHDataRecoderUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = BNAHDataRecoderUITests/Info.plist;
@@ -557,6 +745,7 @@
 		};
 		5742325B1DAE16D2005D5931 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF4E9FAD115D06DCF063144D /* Pods-BNAHDataRecoderUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = BNAHDataRecoderUITests/Info.plist;
