@@ -18,8 +18,10 @@
 		577EE07F1DAF674500288242 /* AHRadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577EE07E1DAF674500288242 /* AHRadioButtonView.swift */; };
 		57B2BA4D1DB0CD0A00A44C68 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B2BA4C1DB0CD0A00A44C68 /* SDWebImage.framework */; };
 		57B82B431DAE29A10074BD97 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B82B421DAE29A10074BD97 /* HomeVC.swift */; };
-		57B82B471DAE32550074BD97 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B82B461DAE32550074BD97 /* UIView+Layout.swift */; };
 		57B82B491DAE476A0074BD97 /* CommonDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B82B481DAE476A0074BD97 /* CommonDef.swift */; };
+		57F0901F1DB3C08600E06BB1 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0901E1DB3C08600E06BB1 /* UIView+Layout.swift */; };
+		57F090231DB3C0C700E06BB1 /* UIColor+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F090221DB3C0C700E06BB1 /* UIColor+Common.swift */; };
+		57F090251DB3CB7200E06BB1 /* String+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F090241DB3CB7200E06BB1 /* String+Common.swift */; };
 		89F4050028A92DAC28CB82B8 /* Pods_BNAHDataRecoderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C31F4F8F5A07517B6AE1349 /* Pods_BNAHDataRecoderTests.framework */; };
 		B6BB70633E1984692E0031E5 /* Pods_BNAHDataRecoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D9FCE890BB33E735FDE82E /* Pods_BNAHDataRecoder.framework */; };
 		B8F9AD6A9E038941CD2E5E42 /* Pods_BNAHDataRecoderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18895C46C0D34830B352FD9C /* Pods_BNAHDataRecoderUITests.framework */; };
@@ -64,8 +66,10 @@
 		577EE07E1DAF674500288242 /* AHRadioButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHRadioButtonView.swift; sourceTree = "<group>"; };
 		57B2BA4C1DB0CD0A00A44C68 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Pods/../build/Debug-iphoneos/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
 		57B82B421DAE29A10074BD97 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		57B82B461DAE32550074BD97 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		57B82B481DAE476A0074BD97 /* CommonDef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDef.swift; sourceTree = "<group>"; };
+		57F0901E1DB3C08600E06BB1 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		57F090221DB3C0C700E06BB1 /* UIColor+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Common.swift"; sourceTree = "<group>"; };
+		57F090241DB3CB7200E06BB1 /* String+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Common.swift"; sourceTree = "<group>"; };
 		5AA874BCC477249B50DA571D /* Pods-BNAHDataRecoderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BNAHDataRecoderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BNAHDataRecoderTests/Pods-BNAHDataRecoderTests.release.xcconfig"; sourceTree = "<group>"; };
 		7A923480ACDC2C523F015DE4 /* Pods-BNAHDataRecoder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BNAHDataRecoder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BNAHDataRecoder/Pods-BNAHDataRecoder.debug.xcconfig"; sourceTree = "<group>"; };
 		7B0B87A2B7AC6C5C8BEF433E /* Pods-BNAHDataRecoderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BNAHDataRecoderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BNAHDataRecoderTests/Pods-BNAHDataRecoderTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,8 +209,8 @@
 		574232601DAE1A4B005D5931 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				57F0901D1DB3C08600E06BB1 /* Extensions */,
 				577EE07D1DAF671800288242 /* View */,
-				57B82B451DAE2FE90074BD97 /* Category */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -227,12 +231,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		57B82B451DAE2FE90074BD97 /* Category */ = {
+		57F0901D1DB3C08600E06BB1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				57B82B461DAE32550074BD97 /* UIView+Layout.swift */,
+				57F0901E1DB3C08600E06BB1 /* UIView+Layout.swift */,
+				57F090221DB3C0C700E06BB1 /* UIColor+Common.swift */,
+				57F090241DB3CB7200E06BB1 /* String+Common.swift */,
 			);
-			path = Category;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C975FE9BE2A855A68613BB98 /* Pods */ = {
@@ -513,13 +519,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57F090231DB3C0C700E06BB1 /* UIColor+Common.swift in Sources */,
 				57B82B491DAE476A0074BD97 /* CommonDef.swift in Sources */,
 				574232311DAE16D2005D5931 /* ViewController.swift in Sources */,
 				57B82B431DAE29A10074BD97 /* HomeVC.swift in Sources */,
+				57F090251DB3CB7200E06BB1 /* String+Common.swift in Sources */,
 				5742322F1DAE16D2005D5931 /* AppDelegate.swift in Sources */,
 				574232651DAE24AB005D5931 /* AHTabBarController.swift in Sources */,
+				57F0901F1DB3C08600E06BB1 /* UIView+Layout.swift in Sources */,
 				577EE07F1DAF674500288242 /* AHRadioButtonView.swift in Sources */,
-				57B82B471DAE32550074BD97 /* UIView+Layout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

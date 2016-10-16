@@ -11,8 +11,7 @@ import SDWebImage
 
 class HomeVC: UIViewController, AHRadioButtonViewDelegate {
 
-    var buttonItem = UIButton()
-    var buttonHot = UIButton()
+    var buttonSearch = UIButton()
     var buttonSelectedIndex : NSInteger?
     
     override func viewDidLoad() {
@@ -31,27 +30,20 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate {
         itemInputView.centerY = radioButton.bottom + 150
         self.view.addSubview(itemInputView)
         
-        
+        buttonSearch.width = 140
+        buttonSearch.height = 30
+        buttonSearch.backgroundColor = UIColor.colorWithHexStr(hexStr: "#8abd25", alpha: 1)
+        buttonSearch.center = CGPoint(x: itemInputView.centerX, y: itemInputView.bottom + 70)
+        buttonSearch.setTitle("搜索", for: .normal)
+        self.view.addSubview(buttonSearch)
     }
     
         override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    func onButtonClicked(button : UIButton!) -> Void {
-     
-        buttonSelectedIndex = button.tag
-        buttonItem.isSelected = button.tag == 0
-        buttonHot.isSelected = button.tag == 1
-        if button.tag == 0 {
-            print("===========0");
-        }
-        else if button.tag == 1 {
-            print("===========1");
-        }
-        else {
-            
-        }
+    func onSearchClicked(button : UIButton!) -> Void {
+    
     }
     
     func didSelectedIndex(index: NSInteger) {
