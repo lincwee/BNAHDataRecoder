@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-BNAHDataRecoder.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,7 +32,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1C3436CEA5C3D39764C5F54374794ECB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3BE6CB85EC3F1BCD5FF26B820AF0A7E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>62AED50D468512598FADD3B1C8144A79</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -37,12 +52,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D8501FE7746E850789000A66413A84A4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EE336E5D84DC55F447CF4DDCC48E41B0</key>
+		<key>829D4CBF3E88A0A8D624C245A3D228E5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
