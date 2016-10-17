@@ -47,15 +47,21 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate {
     }
     
     func onSearchClicked(button : UIButton!) -> Void {
-        let value = itemInputView.text
+//        itemInputView.resignFirstResponder()
+        let value = itemInputView.text! as String
+        if value.characters.count == 0 {
+            return
+        }
+     
         if radioIdex == 0 {
-            AHNetworkUtils.requestAuctionItem(realm: "158", name: value!) { (listData) in
+            AHNetworkUtils.requestAuctionItem(realm: "158", name: value) { (listData) in
                 print(listData?.objectSafe(index: 0))
             }
         }
         else {
-            AHNetworkUtils.requestItem(realm: "158", name: value!, completionHandler: { (dicData) in
+            AHNetworkUtils.requestItem(realm: "158", name: value, completionHandler: { (dicData) in
                 print(dicData!["icon"]!)
+                
             })
         }
     }

@@ -11,7 +11,10 @@ import UIKit
 class AHNetworkUtils: NSObject {
     public class func requestAuctionItem(realm: String, name: String, completionHandler: @escaping (NSArray?) -> Swift.Void){
         AHNetworkUtils.requestItem(realm: realm, name: name) { (resultData) in
-            let urlRealmItemStr = kHostName + kApiAuctionRealm + realm + "/item/" + "\(resultData!["id"]!)"
+            if resultData != nil {
+                return
+            }
+            let urlRealmItemStr = kHostName + kApiAuctionRealm + realm + "/item/" + "\(resultData?["id"]!)"
             
             let urlRealmItem = URL(string: urlRealmItemStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
             let session = URLSession.shared

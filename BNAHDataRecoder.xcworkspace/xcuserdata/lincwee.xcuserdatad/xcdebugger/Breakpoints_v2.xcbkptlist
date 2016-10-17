@@ -25,29 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BNAHDataRecoder/SRC/Common/Network/AHNetworkUtils.swift"
-            timestampString = "498390279.129263"
+            filePath = "BNAHDataRecoder/SRC/HomePage/HomeVC.swift"
+            timestampString = "498391901.988473"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "requestAuctionItem(realm:name:completionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BNAHDataRecoder/SRC/Common/Network/AHNetworkUtils.swift"
-            timestampString = "498390390.307783"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "requestAuctionItem(realm:name:completionHandler:)"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "onSearchClicked(button:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
