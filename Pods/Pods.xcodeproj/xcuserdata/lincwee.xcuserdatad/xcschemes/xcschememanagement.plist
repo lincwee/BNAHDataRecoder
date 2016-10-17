@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>IQKeyboardManager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-BNAHDataRecoder.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,7 +37,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0AE3A5FC7E299D590E8093DD87AC3615</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1C3436CEA5C3D39764C5F54374794ECB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>37C76CD246D637B8E4C586284A0D96B2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,17 +57,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>62AED50D468512598FADD3B1C8144A79</key>
+		<key>3DFBD2F7606FE7DD4D3A5A5E8665BEFB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>6E6223CCA8850CFC393A75DC727DD5BC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>829D4CBF3E88A0A8D624C245A3D228E5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

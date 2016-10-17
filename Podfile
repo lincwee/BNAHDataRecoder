@@ -9,6 +9,7 @@ target 'BNAHDataRecoder' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   pod 'SDWebImage'
   pod 'AFNetworking', '~> 3.0'
+  pod 'IQKeyboardManager'
 
   # Pods for BNAHDataRecoder
 
