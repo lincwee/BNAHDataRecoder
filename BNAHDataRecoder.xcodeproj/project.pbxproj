@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5703AB701DB4758E00220D5B /* AHNetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703AB6F1DB4758E00220D5B /* AHNetworkUtils.swift */; };
+		5703AB7D1DB4B19900220D5B /* NSArray+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703AB7C1DB4B19900220D5B /* NSArray+Common.swift */; };
 		5742322F1DAE16D2005D5931 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5742322E1DAE16D2005D5931 /* AppDelegate.swift */; };
 		574232311DAE16D2005D5931 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574232301DAE16D2005D5931 /* ViewController.swift */; };
 		574232341DAE16D2005D5931 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 574232321DAE16D2005D5931 /* Main.storyboard */; };
@@ -22,6 +24,7 @@
 		57F0901F1DB3C08600E06BB1 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0901E1DB3C08600E06BB1 /* UIView+Layout.swift */; };
 		57F090231DB3C0C700E06BB1 /* UIColor+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F090221DB3C0C700E06BB1 /* UIColor+Common.swift */; };
 		57F090251DB3CB7200E06BB1 /* String+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F090241DB3CB7200E06BB1 /* String+Common.swift */; };
+		57F090271DB3D05000E06BB1 /* AHNetApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F090261DB3D05000E06BB1 /* AHNetApi.swift */; };
 		89F4050028A92DAC28CB82B8 /* Pods_BNAHDataRecoderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C31F4F8F5A07517B6AE1349 /* Pods_BNAHDataRecoderTests.framework */; };
 		B6BB70633E1984692E0031E5 /* Pods_BNAHDataRecoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D9FCE890BB33E735FDE82E /* Pods_BNAHDataRecoder.framework */; };
 		B8F9AD6A9E038941CD2E5E42 /* Pods_BNAHDataRecoderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18895C46C0D34830B352FD9C /* Pods_BNAHDataRecoderUITests.framework */; };
@@ -49,6 +52,8 @@
 		0CE015FCB365C60E1B0EE428 /* Pods-BNAHDataRecoder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BNAHDataRecoder.release.xcconfig"; path = "Pods/Target Support Files/Pods-BNAHDataRecoder/Pods-BNAHDataRecoder.release.xcconfig"; sourceTree = "<group>"; };
 		18895C46C0D34830B352FD9C /* Pods_BNAHDataRecoderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BNAHDataRecoderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D9FCE890BB33E735FDE82E /* Pods_BNAHDataRecoder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BNAHDataRecoder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5703AB6F1DB4758E00220D5B /* AHNetworkUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHNetworkUtils.swift; sourceTree = "<group>"; };
+		5703AB7C1DB4B19900220D5B /* NSArray+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSArray+Common.swift"; sourceTree = "<group>"; };
 		5742322B1DAE16D2005D5931 /* BNAHDataRecoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BNAHDataRecoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5742322E1DAE16D2005D5931 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		574232301DAE16D2005D5931 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +75,7 @@
 		57F0901E1DB3C08600E06BB1 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		57F090221DB3C0C700E06BB1 /* UIColor+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Common.swift"; sourceTree = "<group>"; };
 		57F090241DB3CB7200E06BB1 /* String+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Common.swift"; sourceTree = "<group>"; };
+		57F090261DB3D05000E06BB1 /* AHNetApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHNetApi.swift; sourceTree = "<group>"; };
 		5AA874BCC477249B50DA571D /* Pods-BNAHDataRecoderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BNAHDataRecoderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BNAHDataRecoderTests/Pods-BNAHDataRecoderTests.release.xcconfig"; sourceTree = "<group>"; };
 		7A923480ACDC2C523F015DE4 /* Pods-BNAHDataRecoder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BNAHDataRecoder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BNAHDataRecoder/Pods-BNAHDataRecoder.debug.xcconfig"; sourceTree = "<group>"; };
 		7B0B87A2B7AC6C5C8BEF433E /* Pods-BNAHDataRecoderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BNAHDataRecoderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BNAHDataRecoderTests/Pods-BNAHDataRecoderTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -194,6 +200,8 @@
 		5742325E1DAE1A4B005D5931 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				57F090261DB3D05000E06BB1 /* AHNetApi.swift */,
+				5703AB6F1DB4758E00220D5B /* AHNetworkUtils.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -237,6 +245,7 @@
 				57F0901E1DB3C08600E06BB1 /* UIView+Layout.swift */,
 				57F090221DB3C0C700E06BB1 /* UIColor+Common.swift */,
 				57F090241DB3CB7200E06BB1 /* String+Common.swift */,
+				5703AB7C1DB4B19900220D5B /* NSArray+Common.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -522,10 +531,13 @@
 				57F090231DB3C0C700E06BB1 /* UIColor+Common.swift in Sources */,
 				57B82B491DAE476A0074BD97 /* CommonDef.swift in Sources */,
 				574232311DAE16D2005D5931 /* ViewController.swift in Sources */,
+				5703AB7D1DB4B19900220D5B /* NSArray+Common.swift in Sources */,
+				5703AB701DB4758E00220D5B /* AHNetworkUtils.swift in Sources */,
 				57B82B431DAE29A10074BD97 /* HomeVC.swift in Sources */,
 				57F090251DB3CB7200E06BB1 /* String+Common.swift in Sources */,
 				5742322F1DAE16D2005D5931 /* AppDelegate.swift in Sources */,
 				574232651DAE24AB005D5931 /* AHTabBarController.swift in Sources */,
+				57F090271DB3D05000E06BB1 /* AHNetApi.swift in Sources */,
 				57F0901F1DB3C08600E06BB1 /* UIView+Layout.swift in Sources */,
 				577EE07F1DAF674500288242 /* AHRadioButtonView.swift in Sources */,
 			);
