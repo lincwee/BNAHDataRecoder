@@ -6,7 +6,7 @@ PODS:
   - SDWebImage/Core (3.8.2)
 
 DEPENDENCIES:
-  - Alamofire
+  - Alamofire (~> 4.0)
   - IQKeyboardManager
   - SDWebImage
 
@@ -15,6 +15,6 @@ SPEC CHECKSUMS:
   IQKeyboardManager: c52debb1967799ae7addb98eab0cf328083a874f
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: 6967cca04ccb0dd2d6cf614fd94c4b95f507b580
+PODFILE CHECKSUM: d7e861873e986470e49ab0b762e07b32aed49443
 
 COCOAPODS: 1.0.1

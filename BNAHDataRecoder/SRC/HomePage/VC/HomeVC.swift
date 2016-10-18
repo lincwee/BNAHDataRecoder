@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import Alamofire
 
 class HomeVC: UIViewController, AHRadioButtonViewDelegate {
 
@@ -48,7 +49,6 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate {
     
     func onSearchClicked(button : UIButton!) -> Void {
 
-        
         itemInputView.resignFirstResponder()
         let value = itemInputView.text! as String
         if value.characters.count == 0 {
