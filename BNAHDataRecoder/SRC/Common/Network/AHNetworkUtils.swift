@@ -52,4 +52,8 @@ class AHNetworkUtils: NSObject {
             }
             }.resume()
     }
+    
+    public class func requestItemAuctionMinPrice(realm: String, name: String, completionHandler: @escaping (NSDictionary?) -> Swift.Void) {
+        
+    }
 }

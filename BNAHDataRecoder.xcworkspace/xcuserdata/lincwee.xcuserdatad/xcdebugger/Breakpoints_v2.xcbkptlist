@@ -22,16 +22,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BNAHDataRecoder/SRC/HomePage/HomeVC.swift"
-            timestampString = "498391901.988473"
+            filePath = "BNAHDataRecoder/SRC/HomePage/View/AHCreatedSubItemsView.swift"
+            timestampString = "498468168.471634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "onSearchClicked(button:)"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "init(subItemData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BNAHDataRecoder/SRC/HomePage/View/AHCreatedSubItemsView.swift"
+            timestampString = "498470100.423976"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "createSubItemView(subItemData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BNAHDataRecoder/SRC/HomePage/View/AHCreatedSubItemsView.swift"
+            timestampString = "498470100.423976"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "handleSubItemData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
