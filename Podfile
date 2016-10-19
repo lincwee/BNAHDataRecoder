@@ -11,6 +11,7 @@ target 'BNAHDataRecoder' do
   pod 'SDWebImage'
   pod 'IQKeyboardManager'
   pod 'Alamofire', '~> 4.0'
+  pod 'SVProgressHUD'
 
   # Pods for BNAHDataRecoder
 

@@ -9,6 +9,7 @@
 import UIKit
 import SDWebImage
 import Alamofire
+import SVProgressHUD
 
 class HomeVC: UIViewController, AHRadioButtonViewDelegate {
 
@@ -60,7 +61,9 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate {
             }
         }
         else {
+            SVProgressHUD.show(withStatus: "正在加载")
             AHNetworkUtils.requestItem(realm: "158", name: value, completionHandler: { (dicData) in
+                SVProgressHUD.dismiss()
                 if dicData ==  nil {
                     return
                 }

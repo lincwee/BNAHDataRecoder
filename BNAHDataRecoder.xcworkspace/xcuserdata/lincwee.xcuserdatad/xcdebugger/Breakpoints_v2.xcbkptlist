@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BNAHDataRecoder/SRC/HomePage/View/AHCreatedSubItemsView.swift"
-            timestampString = "498468168.471634"
+            timestampString = "498553672.547621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "init(subItemData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BNAHDataRecoder/SRC/HomePage/View/AHCreatedSubItemsView.swift"
-            timestampString = "498470100.423976"
+            timestampString = "498553672.547621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "handleSubItemData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BNAHDataRecoder/SRC/HomePage/View/AHCreatedSubItemsView.swift"
-            timestampString = "498540651.758"
+            timestampString = "498553672.547621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "createEveryBlockItemView(eveBlockData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BNAHDataRecoder/SRC/HomePage/View/AHCreatedSubItemsView.swift"
-            timestampString = "498541138.542738"
+            timestampString = "498553672.547621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "createEveryBlockItemView(eveBlockData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -86,11 +86,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BNAHDataRecoder/SRC/HomePage/View/AHCreatedSubItemsView.swift"
-            timestampString = "498541674.873326"
+            timestampString = "498554512.283031"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "174"
