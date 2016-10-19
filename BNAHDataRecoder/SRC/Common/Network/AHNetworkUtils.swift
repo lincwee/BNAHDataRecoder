@@ -89,4 +89,22 @@ class AHNetworkUtils: NSObject {
         }
         return
     }
+    
+    public class func requestGetItemNames(name: String, completionHandler: @escaping (NSArray?) -> Swift.Void) {
+        let session = URLSession.shared
+        session.configuration.requestCachePolicy = .useProtocolCachePolicy
+        let urtStr = kHostName + kApiItemNames + "\(name)"
+        let urlStrEncoding = URL(string: urtStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
+        session.dataTask(with: urlStrEncoding!) { (data, response, error) in
+            if let resultData = data {
+                let dataList = try? JSONSerialization.jsonObject(with: resultData, options: .mutableContainers) as! NSArray
+                completionHandler(dataList)
+                return
+            }
+            else {
+                completionHandler([])
+                return
+            }
+        }.resume()
+    }
 }

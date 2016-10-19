@@ -11,11 +11,11 @@ import SDWebImage
 import Alamofire
 import SVProgressHUD
 
-class HomeVC: UIViewController, AHRadioButtonViewDelegate {
+class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFieldViewDelegate {
 
     var buttonSearch = UIButton()
     var buttonSelectedIndex : NSInteger?
-    var itemInputView = UITextField()
+    var itemInputView = AHAutoCompleteTextFieldView()
     var radioIdex : NSInteger = 0
     
     override func viewDidLoad() {
@@ -27,18 +27,19 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate {
         radioButton.delegate = self
         self.view.addSubview(radioButton)
         
-        itemInputView = UITextField.init(frame: CGRect(x: 0, y: 0, width: 200, height: 30))
-        itemInputView.layer.borderColor = UIColor.lightGray.cgColor
-        itemInputView.layer.borderWidth = 0.5
+        itemInputView = AHAutoCompleteTextFieldView.init(frame: CGRect(x: 0, y: 0, width: 240, height: 30))
+//        itemInputView.layer.borderColor = UIColor.lightGray.cgColor
+//        itemInputView.layer.borderWidth = 0.5
         itemInputView.centerX = self.view.width / 2
-        itemInputView.centerY = radioButton.bottom + 150
-        itemInputView.placeholder = "搜索物品"
+        itemInputView.top = radioButton.bottom + 20
+        itemInputView.delegate = self
+//        itemInputView.placeholder = "搜索物品"
         self.view.addSubview(itemInputView)
         
         buttonSearch.width = 140
         buttonSearch.height = 30
         buttonSearch.backgroundColor = UIColor.colorWithHexStr(hexStr: "#8abd25", alpha: 1)
-        buttonSearch.center = CGPoint(x: itemInputView.centerX, y: itemInputView.bottom + 70)
+        buttonSearch.center = CGPoint(x: itemInputView.centerX, y: itemInputView.bottom + 190)
         buttonSearch.setTitle("搜索", for: .normal)
         buttonSearch.addTarget(self, action: #selector(onSearchClicked(button:)), for: .touchUpInside)
         self.view.addSubview(buttonSearch)
@@ -51,7 +52,7 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate {
     func onSearchClicked(button : UIButton!) -> Void {
 
         itemInputView.resignFirstResponder()
-        let value = itemInputView.text! as String
+        let value = itemInputView.textView.text! as String
         if value.characters.count == 0 {
             return
         }
@@ -77,9 +78,24 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate {
         }
     }
     
+    // AHRadioButtonViewDelegate
     func didSelectedIndex(index: NSInteger) {
         radioIdex = index
         let placeHolder = index == 0 ? "搜索物品" : "搜索制造物品的材料"
-        itemInputView.placeholder = placeHolder
+//        itemInputView.textView = placeHolder
+    }
+    
+    // AHAutoCompleteTextFieldViewDelegate
+    func textDidChange(textFieldView: AHAutoCompleteTextFieldView, text: String) {
+        AHNetworkUtils.requestGetItemNames(name: text) { (data) in
+            DispatchQueue.main.async {
+                if let dataList = data {
+                    self.itemInputView.setAutoCompleteData(dataList: dataList)
+                }
+                else {
+                    self.itemInputView.setAutoCompleteData(dataList: [])
+                }
+            }
+        }
     }
 }
