@@ -54,7 +54,6 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate {
         if value.characters.count == 0 {
             return
         }
-     
         if radioIdex == 0 {
             AHNetworkUtils.requestAuctionItem(realm: "158", name: value) { (listData) in
                 print(listData?.objectSafe(index: 0))
@@ -62,7 +61,6 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate {
         }
         else {
             AHNetworkUtils.requestItem(realm: "158", name: value, completionHandler: { (dicData) in
-//                print(dicData?["icon"]!)
                 if dicData ==  nil {
                     return
                 }

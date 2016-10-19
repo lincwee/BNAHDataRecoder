@@ -82,27 +82,56 @@ class AHCreatedSubItemsView: UIView {
     
     private func createEveryBlockItemView(eveBlockData: NSDictionary) -> UIView {
         let blockView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: 0))
+        var totalPriceList = NSMutableArray(capacity: 0)
         let subItemList = eveBlockData.object(forKey: "reagent") as! NSArray
         var lastSubView = UIView(frame: CGRect.zero)
+        let semaphore = DispatchSemaphore(value: 0)
         for subItem in subItemList {
             let subData = subItem as! NSDictionary
-            let subView = self.createSubItemView(subItemData: subData)
+            let subView = self.createSubItemView(subItemData: subData, completionHandler: { (totalPrice) in
+                totalPriceList.add(totalPrice!)
+                if totalPriceList.count == subItemList.count {
+                    semaphore.signal()
+                }
+            })
             blockView.addSubview(subView)
             subView.top = lastSubView.bottom
             subView.left = 0
             blockView.height = subView.bottom
             lastSubView = subView
         }
+        
+        semaphore.wait()
+        print(totalPriceList)
+        var totalPrice = Int64(0)
+        for price in totalPriceList {
+            totalPrice += price as! Int64
+        }
+        let totalPriceLabel = UILabel(frame: .zero)
+        blockView.addSubview(totalPriceLabel)
+        totalPriceLabel.textColor = UIColor.colorWithHex(hexValue: 0x22c12a)
+        totalPriceLabel.font = UIFont.systemFont(ofSize: 12)
+        if totalPrice > 0 {
+            totalPriceLabel.text = "成本价:" + "\(totalPrice)".convertToGoldMoneyType()
+        }
+        else {
+            totalPriceLabel.text = "拍卖行暂无报价"
+        }
+        totalPriceLabel.sizeToFit()
+        totalPriceLabel.right = blockView.width - 10
+        totalPriceLabel.top = lastSubView.bottom + 10
+        blockView.height = totalPriceLabel.bottom + 10
+        
         let line1 = createLineView(width: blockView.width, height: 0.5)
         line1.bottom = blockView.height
         line1.left = 0
         blockView.addSubview(line1)
+        
         return blockView
     }
     
-    private func createSubItemView(subItemData : NSDictionary) -> UIView {
+    private func createSubItemView(subItemData : NSDictionary, completionHandler: @escaping (Int64?) -> Swift.Void) -> UIView {
         let subItemView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: 50))
-        
         let subItemImageView = UIImageView.init(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         subItemView.addSubview(subItemImageView)
         let url = AHCommonUtils.getImageUrl(name: subItemData["icon"] as! String, sizeType: .iTemSize56)
@@ -117,14 +146,56 @@ class AHCreatedSubItemsView: UIView {
             }
         }
         let subItemNameAndCountLabel = UILabel()
+        let subItemCount = subItemData["count"] as! NSNumber
         subItemView.addSubview(subItemNameAndCountLabel)
         subItemNameAndCountLabel.textColor = UIColor.black
         subItemNameAndCountLabel.font = UIFont.systemFont(ofSize: 14)
-        subItemNameAndCountLabel.text = "\(subItemData["name"]!) * \(subItemData["count"]!)"
+        subItemNameAndCountLabel.text = "\(subItemData["name"]!) * \(subItemCount)"
         subItemNameAndCountLabel.sizeToFit()
         
         subItemNameAndCountLabel.left = 55
-        subItemNameAndCountLabel.bottom = subItemImageView.bottom
+        subItemNameAndCountLabel.bottom = subItemView.bottom - 5
+        
+        let minTotalPriceLabel = UILabel()
+        subItemView.addSubview(minTotalPriceLabel)
+        minTotalPriceLabel.textColor = UIColor.red
+        minTotalPriceLabel.font = UIFont.systemFont(ofSize: 12)
+        minTotalPriceLabel.right = subItemView.width - 10
+        minTotalPriceLabel.bottom = subItemNameAndCountLabel.bottom
+        
+        let minUnitPriceLabel = UILabel()
+        subItemView.addSubview(minUnitPriceLabel)
+        minUnitPriceLabel.textColor = UIColor.colorWithHex(hexValue: 0xaa0000)
+        minUnitPriceLabel.font = UIFont.systemFont(ofSize: 12)
+        minUnitPriceLabel.right = minTotalPriceLabel.right
+        minUnitPriceLabel.bottom = minTotalPriceLabel.top - 2
+        
+        AHNetworkUtils.requestItemAuctionMinPrice(realm: "158", name: "\(subItemData["name"]!)") { (dic) in
+            if let resultDic = dic {
+                let unitPriceStr = resultDic["minPrice"] as! String
+                let totalPrice = Int64(unitPriceStr)! * subItemCount.int64Value
+                DispatchQueue.main.async {
+                    let goldPrice = "\(totalPrice)".convertToGoldMoneyType()
+                    minTotalPriceLabel.text = "总价:\(goldPrice)"
+                    minTotalPriceLabel.sizeToFit()
+                    minTotalPriceLabel.right = subItemView.width - 10
+                    minTotalPriceLabel.bottom = subItemNameAndCountLabel.bottom
+                    
+                    minUnitPriceLabel.text = "单价:\(unitPriceStr.convertToGoldMoneyType())"
+                    minUnitPriceLabel.sizeToFit()
+                    minUnitPriceLabel.right = minTotalPriceLabel.right
+                    minUnitPriceLabel.bottom = minTotalPriceLabel.top - 4
+                    completionHandler(totalPrice)
+                }
+            }
+            else {
+                minTotalPriceLabel.text = "暂无价格"
+                minTotalPriceLabel.sizeToFit()
+                minTotalPriceLabel.right = subItemView.width - 10
+                minTotalPriceLabel.bottom = subItemNameAndCountLabel.bottom
+                completionHandler(0)
+            }
+        }
         
         return subItemView
     }

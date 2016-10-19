@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 extension String {
+    //sub string function
     func index(from: Int) -> Index {
         return self.index(startIndex, offsetBy: from)
     }
@@ -28,5 +29,20 @@ extension String {
         let startIndex = index(from: r.lowerBound)
         let endIndex = index(from: r.upperBound)
         return substring(with: startIndex..<endIndex)
+    }
+    
+    //convert string to Gold Showing Syle
+    //like "123456" -> "12金34银56铜"
+    func convertToGoldMoneyType() -> String {
+        let totalMoney = Int64(self)
+        if totalMoney == nil {
+            return "-"
+        }
+        let goldNum = totalMoney! / 10000
+        let silverNum = (totalMoney! % 10000) / 100
+        let copperNum = (totalMoney! % 100)
+        
+        
+        return  (goldNum == 0 ? "" : "\(goldNum)金") + (silverNum == 0 ? "" : "\(silverNum)银") + (copperNum == 0 ? "" : "\(copperNum)铜")
     }
 }
