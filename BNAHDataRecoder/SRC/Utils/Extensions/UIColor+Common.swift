@@ -43,4 +43,5 @@ extension UIColor {
     class func colorWithHexStr(hexStr : String) -> UIColor {
         return UIColor.colorWithHexStr(hexStr: hexStr, alpha: 1)
     }
+
 }

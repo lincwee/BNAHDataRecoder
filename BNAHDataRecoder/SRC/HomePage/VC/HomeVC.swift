@@ -21,8 +21,10 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         
-        let radioButton = AHRadioButtonView.init(frame: CGRect.init(x: 0, y: kNaviTopViewH, width: self.view.width, height: 30), itemNameList: ["物品查询", "制造材料"])
-        radioButton.backgroundColor = UIColor.blue
+        let radioButton = AHRadioButtonView.init(frame: CGRect.init(x: 0, y: kNaviTopViewH, width: self.view.width, height: 40), itemNameList: ["物品查询", "制造材料"])
+        radioButton.backgroundColor = UIColor.colorWithHex(hexValue: 0xdddddd)
+        radioButton.selectedBackgroundColor = UIColor.white
+        
         radioButton.delegate = self
         self.view.addSubview(radioButton)
         

@@ -27,7 +27,20 @@ class AHRadioButtonView: UIView {
     }
     
     public var selectedItemColor : UIColor = UIColor.black
-    public var disSelecteddisableItemColor : UIColor = UIColor.gray
+    public var disSelecteddisableItemColor : UIColor = UIColor.red
+    private var _selectedBg : UIColor  = UIColor.lightGray
+    public var selectedBackgroundColor : UIColor {
+        set {
+            _selectedBg = newValue
+            for button in buttonList {
+                (button as! UIButton).setBackgroundImage(UIImage.imageFromColor(color: _selectedBg), for: .disabled)
+                (button as! UIButton).setBackgroundImage(UIImage.imageFromColor(color: _selectedBg), for: .selected)
+            }
+        }
+        get {
+            return _selectedBg
+        }
+    }
     
     var buttonList = NSMutableArray()
     var delegate: AHRadioButtonViewDelegate?
@@ -57,6 +70,9 @@ class AHRadioButtonView: UIView {
             button.setTitleColor(disSelecteddisableItemColor, for: .highlighted)
             button.setTitleColor(disSelecteddisableItemColor, for: .selected)
             button.setTitleColor(disSelecteddisableItemColor, for: .disabled)
+            button.setBackgroundImage(UIImage.imageFromColor(color: selectedBackgroundColor), for: .selected)
+            button.setBackgroundImage(UIImage.imageFromColor(color: selectedBackgroundColor), for: .disabled)
+           // button.setBackgroundImage(UIImage.imageFromColor(color: UIColor.blue), for: .normal)
             button.addTarget(self, action: #selector(onItemClicked(button:)), for: .touchUpInside)
             button.tag = index
             self.addSubview(button)
