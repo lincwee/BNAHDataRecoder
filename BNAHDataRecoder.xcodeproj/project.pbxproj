@@ -24,6 +24,7 @@
 		577EE07F1DAF674500288242 /* AHRadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577EE07E1DAF674500288242 /* AHRadioButtonView.swift */; };
 		57B2BA4D1DB0CD0A00A44C68 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B2BA4C1DB0CD0A00A44C68 /* SDWebImage.framework */; };
 		57B82B491DAE476A0074BD97 /* CommonDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B82B481DAE476A0074BD97 /* CommonDef.swift */; };
+		57C1AFD01DB8BADD0024B0EE /* realm.json in Resources */ = {isa = PBXBuildFile; fileRef = 57C1AFCF1DB8BADD0024B0EE /* realm.json */; };
 		57C72C931DB75CA500B19AF9 /* AHAutoCompleteTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C72C921DB75CA500B19AF9 /* AHAutoCompleteTextFieldView.swift */; };
 		57F0901F1DB3C08600E06BB1 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0901E1DB3C08600E06BB1 /* UIView+Layout.swift */; };
 		57F090231DB3C0C700E06BB1 /* UIColor+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F090221DB3C0C700E06BB1 /* UIColor+Common.swift */; };
@@ -80,6 +81,7 @@
 		57856D4D1DB616D700EC43AB /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Developer/Xcode/DerivedData/BNAHDataRecoder-ajskpmdutprfkxflmfxqejtdctwx/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		57B2BA4C1DB0CD0A00A44C68 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Pods/../build/Debug-iphoneos/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
 		57B82B481DAE476A0074BD97 /* CommonDef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDef.swift; sourceTree = "<group>"; };
+		57C1AFCF1DB8BADD0024B0EE /* realm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = realm.json; sourceTree = "<group>"; };
 		57C72C921DB75CA500B19AF9 /* AHAutoCompleteTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHAutoCompleteTextFieldView.swift; sourceTree = "<group>"; };
 		57F0901E1DB3C08600E06BB1 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		57F090221DB3C0C700E06BB1 /* UIColor+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Common.swift"; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		5742325C1DAE1A4B005D5931 /* SRC */ = {
 			isa = PBXGroup;
 			children = (
+				57C1AFCF1DB8BADD0024B0EE /* realm.json */,
 				5742325F1DAE1A4B005D5931 /* HomePage */,
 				5742325D1DAE1A4B005D5931 /* Common */,
 				574232601DAE1A4B005D5931 /* Utils */,
@@ -369,6 +372,7 @@
 				TargetAttributes = {
 					5742322A1DAE16D2005D5931 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 2R29L8H96X;
 						ProvisioningStyle = Automatic;
 					};
 					5742323E1DAE16D2005D5931 = {
@@ -412,6 +416,7 @@
 				574232391DAE16D2005D5931 /* LaunchScreen.storyboard in Resources */,
 				574232361DAE16D2005D5931 /* Assets.xcassets in Resources */,
 				574232341DAE16D2005D5931 /* Main.storyboard in Resources */,
+				57C1AFD01DB8BADD0024B0EE /* realm.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -725,10 +730,11 @@
 			baseConfigurationReference = 7A923480ACDC2C523F015DE4 /* Pods-BNAHDataRecoder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2R29L8H96X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
+					"$(PROJECT_DIR)/BNAHDataRecoder/SRC",
 				);
 				INFOPLIST_FILE = BNAHDataRecoder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -743,10 +749,11 @@
 			baseConfigurationReference = 0CE015FCB365C60E1B0EE428 /* Pods-BNAHDataRecoder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2R29L8H96X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
+					"$(PROJECT_DIR)/BNAHDataRecoder/SRC",
 				);
 				INFOPLIST_FILE = BNAHDataRecoder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

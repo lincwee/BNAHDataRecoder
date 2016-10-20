@@ -15,7 +15,7 @@ enum AHItemImageSizeType {
 }
 
 let AHItemDataCache = "itemDataCache"
-
+let AHRealmData = "realm_Data"
 
 class AHCommonUtils: NSObject {
     
@@ -56,6 +56,26 @@ class AHCommonUtils: NSObject {
         }
         return ""
     }
-   
+    
+// realm data
+    public class func initRealmData() {
+        let realmSavedDic = UserDefaults.standard.object(forKey: AHRealmData)
+        if realmSavedDic != nil {
+            return
+        }
+        let realmJson = Bundle.main.path(forResource: "realm", ofType: "json")
+        let realmData = NSData(contentsOfFile: realmJson!)
+        let realmDic = try! JSONSerialization.jsonObject(with: realmData as! Data, options: .mutableContainers) as! NSArray
+        //set realm data
+        UserDefaults.standard.set(realmDic, forKey: AHRealmData)
+    }
+
+    
+    public class var realmList : NSArray {
+        get {
+            let realmList = UserDefaults.standard.object(forKey: AHRealmData) as! NSArray
+            return realmList
+        }
+    }
     
 }
