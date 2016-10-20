@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Charts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>IQKeyboardManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,7 +57,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4352E088581411C3B45D3DC28A1E0AD8</key>
+		<key>3E79D636F6BD7685B5E35256BC4824BB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>67B81A85FD23A76F74D11D461C8FA22A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C0D9DC180657E055B7C12AF1DBD1A2EC</key>
+		<key>C6828C2508515BC0428D6BDAA1292DC9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DB0E2C7D5101190239264B4960AFF85F</key>
+		<key>D650950DAD7EAE663219B5D0521D3E24</key>
 		<dict>
 			<key>primary</key>
 			<true/>

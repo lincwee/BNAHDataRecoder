@@ -12,6 +12,7 @@ target 'BNAHDataRecoder' do
   pod 'IQKeyboardManager'
   pod 'Alamofire', '~> 4.0'
   pod 'SVProgressHUD'
+  pod 'Charts'
 
   # Pods for BNAHDataRecoder
 

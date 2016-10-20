@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4352E088581411C3B45D3DC28A1E0AD8"
+               BlueprintIdentifier = "3E79D636F6BD7685B5E35256BC4824BB"
                BuildableName = "Pods_BNAHDataRecoder.framework"
                BlueprintName = "Pods-BNAHDataRecoder"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4352E088581411C3B45D3DC28A1E0AD8"
+            BlueprintIdentifier = "3E79D636F6BD7685B5E35256BC4824BB"
             BuildableName = "Pods_BNAHDataRecoder.framework"
             BlueprintName = "Pods-BNAHDataRecoder"
             ReferencedContainer = "container:Pods.xcodeproj">
