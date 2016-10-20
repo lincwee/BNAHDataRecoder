@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class AHNetworkUtils: NSObject {
     public class func requestAuctionItem(realm: String, name: String, completionHandler: @escaping (NSArray?) -> Swift.Void){

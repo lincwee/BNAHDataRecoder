@@ -10,9 +10,7 @@ target 'BNAHDataRecoder' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   pod 'SDWebImage'
   pod 'IQKeyboardManager'
-  pod 'Alamofire', '~> 4.0'
   pod 'SVProgressHUD'
-  pod 'Charts'
 
   # Pods for BNAHDataRecoder
 

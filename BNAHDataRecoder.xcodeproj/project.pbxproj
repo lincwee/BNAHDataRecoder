@@ -22,7 +22,6 @@
 		5742324F1DAE16D2005D5931 /* BNAHDataRecoderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5742324E1DAE16D2005D5931 /* BNAHDataRecoderUITests.swift */; };
 		574232651DAE24AB005D5931 /* AHTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574232641DAE24AB005D5931 /* AHTabBarController.swift */; };
 		577EE07F1DAF674500288242 /* AHRadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577EE07E1DAF674500288242 /* AHRadioButtonView.swift */; };
-		57856D4E1DB616D700EC43AB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57856D4D1DB616D700EC43AB /* Alamofire.framework */; };
 		57B2BA4D1DB0CD0A00A44C68 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B2BA4C1DB0CD0A00A44C68 /* SDWebImage.framework */; };
 		57B82B491DAE476A0074BD97 /* CommonDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B82B481DAE476A0074BD97 /* CommonDef.swift */; };
 		57C72C931DB75CA500B19AF9 /* AHAutoCompleteTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C72C921DB75CA500B19AF9 /* AHAutoCompleteTextFieldView.swift */; };
@@ -98,7 +97,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57856D4E1DB616D700EC43AB /* Alamofire.framework in Frameworks */,
 				57B2BA4D1DB0CD0A00A44C68 /* SDWebImage.framework in Frameworks */,
 				B6BB70633E1984692E0031E5 /* Pods_BNAHDataRecoder.framework in Frameworks */,
 			);

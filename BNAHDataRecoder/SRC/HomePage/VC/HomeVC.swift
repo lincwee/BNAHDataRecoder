@@ -8,7 +8,6 @@
 
 import UIKit
 import SDWebImage
-import Alamofire
 import SVProgressHUD
 
 class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFieldViewDelegate {

@@ -1,8 +1,4 @@
 PODS:
-  - Alamofire (4.0.1)
-  - Charts (2.3.0):
-    - Charts/Core (= 2.3.0)
-  - Charts/Core (2.3.0)
   - IQKeyboardManager (4.0.6)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
@@ -10,19 +6,15 @@ PODS:
   - SVProgressHUD (2.0.3)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
-  - Charts
   - IQKeyboardManager
   - SDWebImage
   - SVProgressHUD
 
 SPEC CHECKSUMS:
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
-  Charts: 55d7fd9af175b500208601bea872f0fc72c1d19e
   IQKeyboardManager: c52debb1967799ae7addb98eab0cf328083a874f
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: 02d3649289b23fe4a8a2c80468b14dca9562bbe2
+PODFILE CHECKSUM: e2a0cf94335c68ed4f0f58dd0914086626a45cee
 
 COCOAPODS: 1.0.1

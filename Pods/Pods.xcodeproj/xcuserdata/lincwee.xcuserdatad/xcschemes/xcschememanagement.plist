@@ -4,16 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Charts.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>IQKeyboardManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,12 +47,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3E79D636F6BD7685B5E35256BC4824BB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>67B81A85FD23A76F74D11D461C8FA22A</key>
+		<key>6D1D12A161BA84602F52079EFAB7CD54</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,17 +57,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<key>AB9C4C6B8234C1E9878A7704EC5ECE62</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C6828C2508515BC0428D6BDAA1292DC9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D650950DAD7EAE663219B5D0521D3E24</key>
+		<key>C77B64E9913F18BA63DADE50256C4938</key>
 		<dict>
 			<key>primary</key>
 			<true/>
