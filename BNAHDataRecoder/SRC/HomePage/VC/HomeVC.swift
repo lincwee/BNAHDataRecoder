@@ -54,6 +54,8 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
 
         itemInputView.resignFirstResponder()
         let value = itemInputView.textView.text! as String
+        let pinyinValue = value.applyingTransform(.toLatin, reverse: false)
+        print(pinyinValue!)
         if value.characters.count == 0 {
             return
         }
@@ -83,6 +85,7 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
     func didSelectedIndex(index: NSInteger) {
         radioIdex = index
         let placeHolder = index == 0 ? "搜索物品" : "搜索制造物品的材料"
+        
 //        itemInputView.textView = placeHolder
     }
     

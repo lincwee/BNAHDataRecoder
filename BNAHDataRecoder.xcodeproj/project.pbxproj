@@ -13,6 +13,10 @@
 		5703AB8B1DB52C2E00220D5B /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703AB891DB52C2E00220D5B /* HomeVC.swift */; };
 		5703AB8D1DB52C7300220D5B /* AHCreatedSubItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703AB8C1DB52C7300220D5B /* AHCreatedSubItemsView.swift */; };
 		5703AB8F1DB5D0B000220D5B /* AHCommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703AB8E1DB5D0B000220D5B /* AHCommonUtils.swift */; };
+		570D54621DB9FD8A00199C0C /* realm.json in Resources */ = {isa = PBXBuildFile; fileRef = 570D54611DB9FD8A00199C0C /* realm.json */; };
+		570D54641DB9FE9E00199C0C /* iconfontTabbar.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 570D54631DB9FE9E00199C0C /* iconfontTabbar.ttf */; };
+		570D54661DB9FED100199C0C /* IconfontTextDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570D54651DB9FED100199C0C /* IconfontTextDef.swift */; };
+		570D54681DBA052400199C0C /* UIImage+Iconfont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570D54671DBA052400199C0C /* UIImage+Iconfont.swift */; };
 		5714D4CE1DB8C5BC00BEA8D5 /* UIImage+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714D4CD1DB8C5BC00BEA8D5 /* UIImage+Common.swift */; };
 		5742322F1DAE16D2005D5931 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5742322E1DAE16D2005D5931 /* AppDelegate.swift */; };
 		574232311DAE16D2005D5931 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574232301DAE16D2005D5931 /* ViewController.swift */; };
@@ -25,7 +29,6 @@
 		577EE07F1DAF674500288242 /* AHRadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577EE07E1DAF674500288242 /* AHRadioButtonView.swift */; };
 		57B2BA4D1DB0CD0A00A44C68 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B2BA4C1DB0CD0A00A44C68 /* SDWebImage.framework */; };
 		57B82B491DAE476A0074BD97 /* CommonDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B82B481DAE476A0074BD97 /* CommonDef.swift */; };
-		57C1AFD01DB8BADD0024B0EE /* realm.json in Resources */ = {isa = PBXBuildFile; fileRef = 57C1AFCF1DB8BADD0024B0EE /* realm.json */; };
 		57C72C931DB75CA500B19AF9 /* AHAutoCompleteTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C72C921DB75CA500B19AF9 /* AHAutoCompleteTextFieldView.swift */; };
 		57F0901F1DB3C08600E06BB1 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0901E1DB3C08600E06BB1 /* UIView+Layout.swift */; };
 		57F090231DB3C0C700E06BB1 /* UIColor+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F090221DB3C0C700E06BB1 /* UIColor+Common.swift */; };
@@ -64,6 +67,10 @@
 		5703AB891DB52C2E00220D5B /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		5703AB8C1DB52C7300220D5B /* AHCreatedSubItemsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHCreatedSubItemsView.swift; sourceTree = "<group>"; };
 		5703AB8E1DB5D0B000220D5B /* AHCommonUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHCommonUtils.swift; sourceTree = "<group>"; };
+		570D54611DB9FD8A00199C0C /* realm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = realm.json; sourceTree = "<group>"; };
+		570D54631DB9FE9E00199C0C /* iconfontTabbar.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfontTabbar.ttf; sourceTree = "<group>"; };
+		570D54651DB9FED100199C0C /* IconfontTextDef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconfontTextDef.swift; sourceTree = "<group>"; };
+		570D54671DBA052400199C0C /* UIImage+Iconfont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Iconfont.swift"; sourceTree = "<group>"; };
 		5714D4CD1DB8C5BC00BEA8D5 /* UIImage+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Common.swift"; sourceTree = "<group>"; };
 		5742322B1DAE16D2005D5931 /* BNAHDataRecoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BNAHDataRecoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5742322E1DAE16D2005D5931 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,7 +90,6 @@
 		57856D4D1DB616D700EC43AB /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Developer/Xcode/DerivedData/BNAHDataRecoder-ajskpmdutprfkxflmfxqejtdctwx/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		57B2BA4C1DB0CD0A00A44C68 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Pods/../build/Debug-iphoneos/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
 		57B82B481DAE476A0074BD97 /* CommonDef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDef.swift; sourceTree = "<group>"; };
-		57C1AFCF1DB8BADD0024B0EE /* realm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = realm.json; sourceTree = "<group>"; };
 		57C72C921DB75CA500B19AF9 /* AHAutoCompleteTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHAutoCompleteTextFieldView.swift; sourceTree = "<group>"; };
 		57F0901E1DB3C08600E06BB1 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		57F090221DB3C0C700E06BB1 /* UIColor+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Common.swift"; sourceTree = "<group>"; };
@@ -154,6 +160,24 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
+		570D545F1DB9FD6F00199C0C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				570D54601DB9FD8A00199C0C /* Iconfont */,
+				570D54611DB9FD8A00199C0C /* realm.json */,
+				570D54651DB9FED100199C0C /* IconfontTextDef.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		570D54601DB9FD8A00199C0C /* Iconfont */ = {
+			isa = PBXGroup;
+			children = (
+				570D54631DB9FE9E00199C0C /* iconfontTabbar.ttf */,
+			);
+			path = Iconfont;
+			sourceTree = "<group>";
+		};
 		574232221DAE16D2005D5931 = {
 			isa = PBXGroup;
 			children = (
@@ -211,7 +235,7 @@
 		5742325C1DAE1A4B005D5931 /* SRC */ = {
 			isa = PBXGroup;
 			children = (
-				57C1AFCF1DB8BADD0024B0EE /* realm.json */,
+				570D545F1DB9FD6F00199C0C /* Resource */,
 				5742325F1DAE1A4B005D5931 /* HomePage */,
 				5742325D1DAE1A4B005D5931 /* Common */,
 				574232601DAE1A4B005D5931 /* Utils */,
@@ -282,6 +306,7 @@
 				57F090241DB3CB7200E06BB1 /* String+Common.swift */,
 				5703AB7C1DB4B19900220D5B /* NSArray+Common.swift */,
 				5714D4CD1DB8C5BC00BEA8D5 /* UIImage+Common.swift */,
+				570D54671DBA052400199C0C /* UIImage+Iconfont.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -419,7 +444,8 @@
 				574232391DAE16D2005D5931 /* LaunchScreen.storyboard in Resources */,
 				574232361DAE16D2005D5931 /* Assets.xcassets in Resources */,
 				574232341DAE16D2005D5931 /* Main.storyboard in Resources */,
-				57C1AFD01DB8BADD0024B0EE /* realm.json in Resources */,
+				570D54621DB9FD8A00199C0C /* realm.json in Resources */,
+				570D54641DB9FE9E00199C0C /* iconfontTabbar.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,11 +605,13 @@
 				5703AB8A1DB52C2E00220D5B /* AHCreatedItemVC.swift in Sources */,
 				57F090251DB3CB7200E06BB1 /* String+Common.swift in Sources */,
 				5742322F1DAE16D2005D5931 /* AppDelegate.swift in Sources */,
+				570D54661DB9FED100199C0C /* IconfontTextDef.swift in Sources */,
 				574232651DAE24AB005D5931 /* AHTabBarController.swift in Sources */,
 				57F090271DB3D05000E06BB1 /* AHNetApi.swift in Sources */,
 				5714D4CE1DB8C5BC00BEA8D5 /* UIImage+Common.swift in Sources */,
 				57F0901F1DB3C08600E06BB1 /* UIView+Layout.swift in Sources */,
 				577EE07F1DAF674500288242 /* AHRadioButtonView.swift in Sources */,
+				570D54681DBA052400199C0C /* UIImage+Iconfont.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,22 +15,26 @@ class AHTabBarController: UITabBarController, UITabBarControllerDelegate {
         self.delegate = self
         let vc1 = HomeVC()
         vc1.title = "首页"
+        let item1 = UITabBarItem.init(title: "首页", image: UIImage.imageFromIconfont(iconText: IconfontHot, size: 30, color: nil), tag: 0)
+        vc1.tabBarItem = item1
+        item1.selectedImage = (UIImage.imageFromIconfont(iconText: IconfontHot, size: 30, color: nil))
+
+        
         
         let vc2 = ViewController()
-        vc2.title = "服务器"
+        let item2 = UITabBarItem.init(title: "服务器", image: UIImage.imageFromIconfont(iconText: IconfontWatchSheet, size: 30, color: nil), tag: 1)
+        vc2.tabBarItem = item2
+        item2.selectedImage = (UIImage.imageFromIconfont(iconText: IconfontWatchSheet, size: 30, color: nil))
         
         let vc3 = ViewController()
-        vc3.title = "vc3"
+        let item3 = UITabBarItem.init(title: "我的", image: UIImage.imageFromIconfont(iconText: IconfontMine, size: 30, color: nil), tag: 3)
+        vc3.tabBarItem = item3
+        item3.selectedImage = (UIImage.imageFromIconfont(iconText: IconfontMine, size: 30, color: nil))
         
-        let vc4 = ViewController()
-        vc4.title = "vc4"
+     
         
-        self.viewControllers = [vc1, vc2, vc3, vc4]
-        
-        let item = UITabBarItem.init(title: "haha", image: nil, tag: 0)
-        vc3.tabBarItem = item
-        self.title = vc1.title
-
+        UITabBar.appearance().tintColor = themeColor
+        self.viewControllers = [vc1, vc2, vc3]
     }
 
     override func didReceiveMemoryWarning() {

@@ -17,6 +17,9 @@ let kStatusBarH : CGFloat = 20.0
 let kNavibarH : CGFloat = 44.0
 let kNaviTopViewH : CGFloat = (kStatusBarH + kNavibarH)
 
+//color
+let themeColor = UIColor.colorWithHex(hexValue: 0x85bf2d)
+
 class CommonDef {
     
 
