@@ -17,7 +17,7 @@ class AHTabBarController: UITabBarController, UITabBarControllerDelegate {
         vc1.title = "首页"
         
         let vc2 = ViewController()
-        vc2.title = "vc2"
+        vc2.title = "服务器"
         
         let vc3 = ViewController()
         vc3.title = "vc3"
@@ -27,6 +27,8 @@ class AHTabBarController: UITabBarController, UITabBarControllerDelegate {
         
         self.viewControllers = [vc1, vc2, vc3, vc4]
         
+        let item = UITabBarItem.init(title: "haha", image: nil, tag: 0)
+        vc3.tabBarItem = item
         self.title = vc1.title
 
     }
