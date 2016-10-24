@@ -9,14 +9,15 @@
 import UIKit
 
 let kAutoCompleteViewDefaultHeight = CGFloat(135)
+let kAutoCompleteCellHeight = CGFloat(30)
 
 protocol AHAutoCompleteTextFieldViewDelegate{
     func textDidChange(textFieldView: AHAutoCompleteTextFieldView, text: String)
 }
 
-class AHAutoCompleteTextFieldView: UIView, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate {
+class AHAutoCompleteTextFieldView: UIView, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     //propertey
-    let textView = UITextView()
+    let textField = UITextField()
     var autoCompleteView = UITableView()
     var delegate : AHAutoCompleteTextFieldViewDelegate?
     
@@ -24,10 +25,12 @@ class AHAutoCompleteTextFieldView: UIView, UITableViewDelegate, UITableViewDataS
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        textView.frame = frame
-        textView.backgroundColor = UIColor.lightGray
-        textView.delegate = self
-        self.addSubview(textView)
+        textField.frame = frame
+        textField.backgroundColor = UIColor.lightGray
+        textField.delegate = self
+        //textField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
+        NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange), name: Notification.Name.UITextFieldTextDidChange, object: nil)
+        self.addSubview(textField)
         self.initAutoCompleteView()
     }
     
@@ -37,7 +40,7 @@ class AHAutoCompleteTextFieldView: UIView, UITableViewDelegate, UITableViewDataS
 
     public func setAutoCompleteData(dataList: NSArray?) {
         _listACData = dataList!
-        self.resetAutoCompleteView(inputStr: textView.text!)
+        self.resetAutoCompleteView(inputStr: textField.text!)
         autoCompleteView.reloadData()
         if autoCompleteView.contentSize.height < kAutoCompleteViewDefaultHeight {
             autoCompleteView.height = autoCompleteView.contentSize.height
@@ -73,13 +76,12 @@ class AHAutoCompleteTextFieldView: UIView, UITableViewDelegate, UITableViewDataS
         autoCompleteView.left = self.left
     }
     
-    //UITextViewDelegate
-    func textViewDidChange(_ textView: UITextView) {
-        let textRange = textView.markedTextRange
+    func textFieldDidChange() {
+        let textRange = textField.markedTextRange
         //只有在无高亮的情况下才进行text change判断
         if textRange == nil {
-            print(textView.text!)
-            delegate?.textDidChange(textFieldView: self, text: textView.text!)
+            print(textField.text!)
+            delegate?.textDidChange(textFieldView: self, text: textField.text!)
         }
     }
     
@@ -93,19 +95,19 @@ class AHAutoCompleteTextFieldView: UIView, UITableViewDelegate, UITableViewDataS
         var cell = tableView.dequeueReusableCell(withIdentifier: reuseId)
         if cell == nil {
             cell = UITableViewCell.init(style: .default, reuseIdentifier: reuseId)
-            cell?.textLabel?.font = UIFont.systemFont(ofSize: 11)
+            cell?.textLabel?.font = UIFont.systemFont(ofSize: 12)
         }
         cell?.textLabel?.text = _listACData.objectSafe(index: indexPath.row) as? String
         return cell!
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 25.0
+        return kAutoCompleteCellHeight
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        textView.text = _listACData.objectSafe(index: indexPath.row) as! String
+        textField.text = _listACData.objectSafe(index: indexPath.row) as? String
         autoCompleteView.isHidden = true
     }
 

@@ -105,13 +105,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BNAHDataRecoder/SRC/Utils/View/AHAutoCompleteTextFieldView.swift"
-            timestampString = "498566541.121629"
+            filePath = "BNAHDataRecoder/SRC/Utils/Extensions/UIImage+Iconfont.swift"
+            timestampString = "498732007.343972"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "setAutoCompleteData(dataList:)"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "imageFromIconfont(iconText:iconFontName:size:color:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -121,14 +121,24 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BNAHDataRecoder/SRC/Utils/Extensions/UIImage+Iconfont.swift"
-            timestampString = "498732007.343972"
+            filePath = "BNAHDataRecoder/SRC/Common/AHCommonUtils.swift"
+            timestampString = "498931885.435159"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "imageFromIconfont(iconText:iconFontName:size:color:)"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "initRealmData()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

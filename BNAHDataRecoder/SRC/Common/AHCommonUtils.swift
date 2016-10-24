@@ -74,7 +74,7 @@ class AHCommonUtils: NSObject {
     public class var realmList : NSArray {
         get {
             let realmList = UserDefaults.standard.object(forKey: AHRealmData) as! NSArray
-            return realmList
+            return realmList.copy() as! NSArray
         }
     }
     

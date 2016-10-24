@@ -17,8 +17,12 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
     var itemInputView = AHAutoCompleteTextFieldView()
     var radioIdex : NSInteger = 0
     
+    let kSearchItemPlaceplaceholderStr = "搜索物品"
+    let kCreatedMetplaceholderStr = "搜索制造物品的材料"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "首页"
         self.view.backgroundColor = UIColor.white
         
         let radioButton = AHRadioButtonView.init(frame: CGRect.init(x: 0, y: kNaviTopViewH, width: self.view.width, height: 40), itemNameList: ["物品查询", "制造材料"])
@@ -29,12 +33,11 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
         self.view.addSubview(radioButton)
         
         itemInputView = AHAutoCompleteTextFieldView.init(frame: CGRect(x: 0, y: 0, width: 240, height: 30))
-//        itemInputView.layer.borderColor = UIColor.lightGray.cgColor
-//        itemInputView.layer.borderWidth = 0.5
+        itemInputView.textField.backgroundColor = UIColor.colorWithHex(hexValue: 0xdddddd)
         itemInputView.centerX = self.view.width / 2
         itemInputView.top = radioButton.bottom + 20
         itemInputView.delegate = self
-//        itemInputView.placeholder = "搜索物品"
+        itemInputView.textField.placeholder = kSearchItemPlaceplaceholderStr
         self.view.addSubview(itemInputView)
         
         buttonSearch.width = 140
@@ -46,6 +49,9 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
         self.view.addSubview(buttonSearch)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
         override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -53,7 +59,7 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
     func onSearchClicked(button : UIButton!) -> Void {
 
         itemInputView.resignFirstResponder()
-        let value = itemInputView.textView.text! as String
+        let value = itemInputView.textField.text! as String
         let pinyinValue = value.applyingTransform(.toLatin, reverse: false)
         print(pinyinValue!)
         if value.characters.count == 0 {
@@ -84,9 +90,8 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
     // AHRadioButtonViewDelegate
     func didSelectedIndex(index: NSInteger) {
         radioIdex = index
-        let placeHolder = index == 0 ? "搜索物品" : "搜索制造物品的材料"
-        
-//        itemInputView.textView = placeHolder
+        let placeHolder = index == 0 ? kSearchItemPlaceplaceholderStr : kCreatedMetplaceholderStr
+        itemInputView.textField.placeholder = placeHolder
     }
     
     // AHAutoCompleteTextFieldViewDelegate

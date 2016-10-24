@@ -34,6 +34,8 @@
 		57F090231DB3C0C700E06BB1 /* UIColor+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F090221DB3C0C700E06BB1 /* UIColor+Common.swift */; };
 		57F090251DB3CB7200E06BB1 /* String+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F090241DB3CB7200E06BB1 /* String+Common.swift */; };
 		57F090271DB3D05000E06BB1 /* AHNetApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F090261DB3D05000E06BB1 /* AHNetApi.swift */; };
+		57F865021DBCF49900775649 /* ServerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F865011DBCF49900775649 /* ServerVC.swift */; };
+		57F865041DBCFF5500775649 /* AHServiceSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F865031DBCFF5500775649 /* AHServiceSearchVC.swift */; };
 		89F4050028A92DAC28CB82B8 /* Pods_BNAHDataRecoderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C31F4F8F5A07517B6AE1349 /* Pods_BNAHDataRecoderTests.framework */; };
 		B6BB70633E1984692E0031E5 /* Pods_BNAHDataRecoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D9FCE890BB33E735FDE82E /* Pods_BNAHDataRecoder.framework */; };
 		B8F9AD6A9E038941CD2E5E42 /* Pods_BNAHDataRecoderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18895C46C0D34830B352FD9C /* Pods_BNAHDataRecoderUITests.framework */; };
@@ -95,6 +97,8 @@
 		57F090221DB3C0C700E06BB1 /* UIColor+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Common.swift"; sourceTree = "<group>"; };
 		57F090241DB3CB7200E06BB1 /* String+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Common.swift"; sourceTree = "<group>"; };
 		57F090261DB3D05000E06BB1 /* AHNetApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHNetApi.swift; sourceTree = "<group>"; };
+		57F865011DBCF49900775649 /* ServerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerVC.swift; sourceTree = "<group>"; };
+		57F865031DBCFF5500775649 /* AHServiceSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHServiceSearchVC.swift; sourceTree = "<group>"; };
 		5AA874BCC477249B50DA571D /* Pods-BNAHDataRecoderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BNAHDataRecoderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BNAHDataRecoderTests/Pods-BNAHDataRecoderTests.release.xcconfig"; sourceTree = "<group>"; };
 		7A923480ACDC2C523F015DE4 /* Pods-BNAHDataRecoder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BNAHDataRecoder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BNAHDataRecoder/Pods-BNAHDataRecoder.debug.xcconfig"; sourceTree = "<group>"; };
 		7B0B87A2B7AC6C5C8BEF433E /* Pods-BNAHDataRecoderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BNAHDataRecoderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BNAHDataRecoderTests/Pods-BNAHDataRecoderTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -236,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				570D545F1DB9FD6F00199C0C /* Resource */,
+				57F864FE1DBCF42100775649 /* ServerPage */,
 				5742325F1DAE1A4B005D5931 /* HomePage */,
 				5742325D1DAE1A4B005D5931 /* Common */,
 				574232601DAE1A4B005D5931 /* Utils */,
@@ -309,6 +314,31 @@
 				570D54671DBA052400199C0C /* UIImage+Iconfont.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		57F864FE1DBCF42100775649 /* ServerPage */ = {
+			isa = PBXGroup;
+			children = (
+				57F864FF1DBCF45900775649 /* View */,
+				57F865001DBCF45900775649 /* VC */,
+			);
+			path = ServerPage;
+			sourceTree = "<group>";
+		};
+		57F864FF1DBCF45900775649 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		57F865001DBCF45900775649 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				57F865011DBCF49900775649 /* ServerVC.swift */,
+				57F865031DBCFF5500775649 /* AHServiceSearchVC.swift */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 		C975FE9BE2A855A68613BB98 /* Pods */ = {
@@ -400,7 +430,7 @@
 				TargetAttributes = {
 					5742322A1DAE16D2005D5931 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 2R29L8H96X;
+						DevelopmentTeam = W8LAK68552;
 						ProvisioningStyle = Automatic;
 					};
 					5742323E1DAE16D2005D5931 = {
@@ -606,8 +636,10 @@
 				57F090251DB3CB7200E06BB1 /* String+Common.swift in Sources */,
 				5742322F1DAE16D2005D5931 /* AppDelegate.swift in Sources */,
 				570D54661DB9FED100199C0C /* IconfontTextDef.swift in Sources */,
+				57F865021DBCF49900775649 /* ServerVC.swift in Sources */,
 				574232651DAE24AB005D5931 /* AHTabBarController.swift in Sources */,
 				57F090271DB3D05000E06BB1 /* AHNetApi.swift in Sources */,
+				57F865041DBCFF5500775649 /* AHServiceSearchVC.swift in Sources */,
 				5714D4CE1DB8C5BC00BEA8D5 /* UIImage+Common.swift in Sources */,
 				57F0901F1DB3C08600E06BB1 /* UIView+Layout.swift in Sources */,
 				577EE07F1DAF674500288242 /* AHRadioButtonView.swift in Sources */,
@@ -762,7 +794,8 @@
 			baseConfigurationReference = 7A923480ACDC2C523F015DE4 /* Pods-BNAHDataRecoder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2R29L8H96X;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = W8LAK68552;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
@@ -781,7 +814,8 @@
 			baseConfigurationReference = 0CE015FCB365C60E1B0EE428 /* Pods-BNAHDataRecoder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2R29L8H96X;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = W8LAK68552;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
