@@ -20,11 +20,14 @@ let kNaviTopViewH : CGFloat = (kStatusBarH + kNavibarH)
 //tab bar
 let kTabbarDefaultHeight : CGFloat = 49.0
 
-//color
-let themeColor = UIColor.colorWithHex(hexValue: 0x85bf2d)
+//MARK:- color
+let themeColorHexValue = 0x85bf2d
+let themeColor = UIColor.colorWithHex(hexValue: themeColorHexValue)
+
+//MARK:- Notification
+let kNotificationDefaultRealmChanged = "kNotificationDefaultRealmChanged"
 
 class CommonDef {
-    
-
+  
 }
 

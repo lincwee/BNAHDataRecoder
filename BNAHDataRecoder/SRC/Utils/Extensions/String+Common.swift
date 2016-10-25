@@ -31,6 +31,17 @@ extension String {
         return substring(with: startIndex..<endIndex)
     }
     
+    var firstChar : String! {
+        get {
+            if self.characters.count >= 1 {
+                return self.substring(to: 1)
+            }
+            else {
+                return ""
+            }
+        }
+    }
+    
     //convert string to Gold Showing Syle
     //like "123456" -> "12金34银56铜"
     func convertToGoldMoneyType() -> String {

@@ -16,6 +16,7 @@ enum AHItemImageSizeType {
 
 let AHItemDataCache = "itemDataCache"
 let AHRealmData = "realm_Data"
+let AHDefaultRealm = "default_realm"
 
 class AHCommonUtils: NSObject {
     
@@ -65,7 +66,18 @@ class AHCommonUtils: NSObject {
         }
         let realmJson = Bundle.main.path(forResource: "realm", ofType: "json")
         let realmData = NSData(contentsOfFile: realmJson!)
-        let realmDic = try! JSONSerialization.jsonObject(with: realmData as! Data, options: .mutableContainers) as! NSArray
+        var realmDic = try! JSONSerialization.jsonObject(with: realmData as! Data, options: .mutableContainers) as! NSArray
+        //sort array by name's pinyin first char
+        realmDic = realmDic.sorted { (item1, item2) -> Bool in
+            let dic1 = item1 as! NSDictionary
+            let dic2 = item2 as! NSDictionary
+            let dic1NamePY = (dic1["name"] as! String).applyingTransform(.toLatin, reverse: false)
+            let dic2NamePY = (dic2["name"] as! String).applyingTransform(.toLatin, reverse: false)
+            let firstChar1 = (dic1NamePY?.firstChar)! as String
+            let firstChar2 = (dic2NamePY?.firstChar)! as String
+            
+            return firstChar1 < firstChar2
+            } as NSArray!
         //set realm data
         UserDefaults.standard.set(realmDic, forKey: AHRealmData)
     }
@@ -75,6 +87,28 @@ class AHCommonUtils: NSObject {
         get {
             let realmList = UserDefaults.standard.object(forKey: AHRealmData) as! NSArray
             return realmList.copy() as! NSArray
+        }
+    }
+    
+    public class var defaultRealm : NSDictionary? {
+        get {
+            let defaultValue = UserDefaults.standard.object(forKey: AHDefaultRealm) as? NSDictionary
+            if let value = defaultValue {
+                return value
+            }
+            else {
+                let realmList = AHCommonUtils.realmList
+                //if not default value ,choose id = 158 server
+                return realmList.objectSafe(index: 158) as? NSDictionary
+            }
+        }
+        
+        set {
+            if newValue == nil {
+                return
+            }
+            NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: kNotificationDefaultRealmChanged), object: nil)
+            UserDefaults.standard.set(newValue, forKey: AHDefaultRealm)
         }
     }
     

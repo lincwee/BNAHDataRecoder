@@ -20,5 +20,6 @@ let kApiItemNames = "item/names?term="
 let kApiAuctionRealm = "auction/realm/"
 let kApiAuctionRealms = "auction/realms/summary"
 let kApiAuctionItem = "auction/item/"
+let kApiAuctionSummmary = "auction/realms/summary"
 
 //  wowtoken

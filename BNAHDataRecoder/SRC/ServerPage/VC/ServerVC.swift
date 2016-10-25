@@ -13,8 +13,6 @@ class ServerVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     var tableView = UITableView()
     var searchVC : AHServiceSearchVC!
     
-    let kSearchCellHeight = CGFloat(40)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +22,8 @@ class ServerVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         tableView.delegate = self
         tableView.dataSource = self
         self.view.addSubview(tableView)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateDefaultRealm), name: NSNotification.Name.init(rawValue: kNotificationDefaultRealmChanged), object: nil)
         
         searchVC = AHServiceSearchVC()
         self.tableView.tableHeaderView = searchVC.searchBar
@@ -45,18 +45,38 @@ class ServerVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
         let flag = "serverSearchFlag"
         var cell = tableView.dequeueReusableCell(withIdentifier: flag
-        )
+        ) as?
+        AHServerItemCell
         if cell == nil {
-            cell = UITableViewCell.init(style: .default, reuseIdentifier: flag)
+            cell = AHServerItemCell.init(style: .default, reuseIdentifier: flag)
         }
-        cell?.textLabel?.text = "\(indexPath.row)"
+        if indexPath.row == 0 {
+            cell?.setCellData(data: ["title": "默认服务器", "subTitle": "\((AHCommonUtils.defaultRealm?.object(forKey: "name"))!)"])
+        }
+        else if indexPath.row == 1 {
+            cell?.setCellData(data: ["title": "偏好服务器"])
+        }
+        else {
+            cell?.setCellData(data: ["title": "时光徽章"])
+        }
         return cell!
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return kSearchCellHeight
+        return AHServerItemCell.cellHeight
     }
     
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        if indexPath.row == 0 {
+            searchVC.isActive = true
+        }
+    }
+    
+    //MARK:- private method
+    @objc private func updateDefaultRealm() {
+        tableView.reloadData()
+    }
 
 }

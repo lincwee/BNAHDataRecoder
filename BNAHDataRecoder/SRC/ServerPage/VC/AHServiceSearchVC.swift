@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import SCLAlertView
+
+protocol AHServiceSearchVCDelegate {
+    
+}
 
 class AHServiceSearchVC: UISearchController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating, UISearchControllerDelegate, UISearchBarDelegate {
 
     var tableViewVC : UITableViewController = UITableViewController()
-    let realmData : NSArray! = AHCommonUtils.realmList
+    var realmData : NSArray! = AHCommonUtils.realmList
     var filterRealmData : NSArray = []
     
     init() {
@@ -40,6 +45,8 @@ class AHServiceSearchVC: UISearchController, UITableViewDataSource, UITableViewD
         
         tableViewVC.tableView.delegate = self
         tableViewVC.tableView.dataSource = self
+        
+     
 
         // Do any additional setup after loading the view.
     }
@@ -49,18 +56,29 @@ class AHServiceSearchVC: UISearchController, UITableViewDataSource, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
-    //UITableView delegate & datasource
+// MARK:- UITableView delegate & datasource
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
         return filterRealmData.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
-        let flag = "fuck"
+        let flag = "ahServiceFlag"
         var cell = tableView.dequeueReusableCell(withIdentifier: flag)
         if cell == nil {
-            cell = UITableViewCell.init(style: .default, reuseIdentifier: flag)
+            cell = UITableViewCell.init(style: .subtitle, reuseIdentifier: flag)
         }
-        cell?.textLabel?.text = "\((filterRealmData[indexPath.row] as! NSDictionary).object(forKey: "name")!)"
+        let cellListItem = filterRealmData[indexPath.row] as! NSDictionary
+        let defaultServetItem = AHCommonUtils.defaultRealm
+        var text = cellListItem.object(forKey: "name")! as! String
+        if cellListItem.isEqual(defaultServetItem) {
+            text += "(默认服务器)"
+            cell?.textLabel?.textColor = UIColor.red
+        }
+        else {
+            cell?.textLabel?.textColor = UIColor.black
+        }
+        cell?.textLabel?.text = text
+        
         return cell!
     }
     
@@ -70,13 +88,35 @@ class AHServiceSearchVC: UISearchController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let serverData = filterRealmData.objectSafe(index: indexPath.row) as! NSDictionary
+        self.searchBar.resignFirstResponder()
+        let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+        alert.addButton("查看服务器详情") {
+            self.isActive = false
+        }
+
+        alert.addButton("添加偏好服务器") {
+            self.isActive = false
+        }
         
-        self.isActive = false
+        alert.addButton("设置为默认服务器") {
+            self.isActive = false
+            let dic = self.realmData.objectSafe(index: indexPath.row) as! NSDictionary
+            AHCommonUtils.defaultRealm = dic
+            tableView.reloadData()
+        }
         
+        alert.addButton("取消") { 
+            alert.hideView()
+            self.searchBar.becomeFirstResponder()
+        }
+        
+        alert.showTitle("", subTitle: "服务器:"+"\(serverData["name"]!)", style: .notice, closeButtonTitle: "取消", duration: 0, colorStyle: UInt(themeColorHexValue), colorTextButton: 0xffffff, circleIconImage: nil, animationStyle: .topToBottom)
     }
+  
 
     
-    //UISearchController delegate
+    //MARK:- UISearchController delegate
     
     func updateSearchResults(for searchController: UISearchController) {
         print(searchBar.text!)
@@ -89,7 +129,7 @@ class AHServiceSearchVC: UISearchController, UITableViewDataSource, UITableViewD
     }
 
     
-    //private
+    //MARK:- private method
     private func filterRealmKeyword(keyword : String) {
         filterRealmData = []
         if keyword == "" {

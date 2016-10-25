@@ -1,5 +1,6 @@
 PODS:
   - IQKeyboardManager (4.0.6)
+  - SCLAlertView (0.7.0)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -7,14 +8,16 @@ PODS:
 
 DEPENDENCIES:
   - IQKeyboardManager
+  - SCLAlertView
   - SDWebImage
   - SVProgressHUD
 
 SPEC CHECKSUMS:
   IQKeyboardManager: c52debb1967799ae7addb98eab0cf328083a874f
+  SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: e2a0cf94335c68ed4f0f58dd0914086626a45cee
+PODFILE CHECKSUM: c30b48ed991f2f1494c06de39d0a02990b0311e2
 
 COCOAPODS: 1.0.1
