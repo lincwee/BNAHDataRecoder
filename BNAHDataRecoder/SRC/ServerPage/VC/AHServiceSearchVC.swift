@@ -83,7 +83,7 @@ class AHServiceSearchVC: UISearchController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 35
+        return 45
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -91,27 +91,46 @@ class AHServiceSearchVC: UISearchController, UITableViewDataSource, UITableViewD
         let serverData = filterRealmData.objectSafe(index: indexPath.row) as! NSDictionary
         self.searchBar.resignFirstResponder()
         let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+        let dic = self.realmData.objectSafe(index: indexPath.row) as! NSDictionary
+        let realmName = (dic["name"] as! String)
         alert.addButton("查看服务器详情") {
             self.isActive = false
         }
-
-        alert.addButton("添加偏好服务器") {
-            self.isActive = false
+        let defaultName = AHCommonUtils.defaultRealm?["name"] as! String
+        let hasContainPrefer = (AHCommonUtils.preferRealm?.contains(realmName))! as Bool    // is prefer realm
+        let hasBeenDefaultRealm = (defaultName == realmName) as Bool  //is Default realm
+        
+        
+        if !hasBeenDefaultRealm {
+            alert.addButton("设置为默认服务器") {
+                self.isActive = false
+                
+                AHCommonUtils.defaultRealm = dic
+                tableView.reloadData()
+            }
         }
         
-        alert.addButton("设置为默认服务器") {
-            self.isActive = false
-            let dic = self.realmData.objectSafe(index: indexPath.row) as! NSDictionary
-            AHCommonUtils.defaultRealm = dic
-            tableView.reloadData()
+        alert.addButton(hasContainPrefer ? "删除偏好服务器" : "添加偏好服务器", backgroundColor: hasContainPrefer ? UIColor.colorWithHex(hexValue: 0x777777) : themeColor, textColor: nil, showDurationStatus: false) {
+            let name = dic["name"] as! String
+            if hasContainPrefer {
+                if AHCommonUtils.deletePreferRealm(name: name) {
+                    
+                }
+            }
+            else {
+                if AHCommonUtils.addPreferRealm(name: name) {
+                    
+                }
+            }
         }
-        
+ 
         alert.addButton("取消") { 
             alert.hideView()
             self.searchBar.becomeFirstResponder()
         }
         
-        alert.showTitle("", subTitle: "服务器:"+"\(serverData["name"]!)", style: .notice, closeButtonTitle: "取消", duration: 0, colorStyle: UInt(themeColorHexValue), colorTextButton: 0xffffff, circleIconImage: nil, animationStyle: .topToBottom)
+        let subtitle = "服务器:"+"\(serverData["name"]!)" + (hasBeenDefaultRealm ? "(默认服务器)" : "")
+        alert.showTitle("", subTitle: subtitle, style: .notice, closeButtonTitle: "取消", duration: 0, colorStyle: UInt(themeColorHexValue), colorTextButton: 0xffffff, circleIconImage: nil, animationStyle: .topToBottom)
     }
   
 

@@ -21,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.backgroundColor = UIColor.white
         let tabbarVC = AHTabBarController();
         let navVC = UINavigationController.init(rootViewController: tabbarVC);
+        navVC.navigationBar.barTintColor = themeColor
+        navVC.navigationBar.tintColor = UIColor.white
+        navVC.navigationBar.barStyle = .blackTranslucent
         self.window?.rootViewController = navVC;
         self.window?.makeKeyAndVisible()
         

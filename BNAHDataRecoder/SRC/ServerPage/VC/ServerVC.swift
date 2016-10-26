@@ -12,21 +12,27 @@ class ServerVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     var tableView = UITableView()
     var searchVC : AHServiceSearchVC!
+    var realmSummaryData = NSArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height - kTabbarDefaultHeight))
         tableView.separatorStyle = .none
-        tableView.isScrollEnabled = false
         tableView.delegate = self
         tableView.dataSource = self
+        let refreshControl = UIRefreshControl.init()
+        refreshControl.attributedTitle = NSAttributedString.init(string: "刷新服务器数据...")
+        refreshControl.addTarget(self, action: #selector(refreshing), for: .valueChanged)
+        tableView.refreshControl = refreshControl
         self.view.addSubview(tableView)
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateDefaultRealm), name: NSNotification.Name.init(rawValue: kNotificationDefaultRealmChanged), object: nil)
         
         searchVC = AHServiceSearchVC()
         self.tableView.tableHeaderView = searchVC.searchBar
+        
+        requestRealmSummaryData()
         
     }
 
@@ -72,11 +78,33 @@ class ServerVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         if indexPath.row == 0 {
             searchVC.isActive = true
         }
+        if indexPath.row == 1 {
+            DispatchQueue.main.async {
+                self.navigationController?.pushViewController(AHPreferRealmVC(), animated: true)
+            }
+        }
     }
     
     //MARK:- private method
     @objc private func updateDefaultRealm() {
         tableView.reloadData()
+    }
+    
+    @objc private func refreshing() {
+        AHNetworkUtils.requestRealmsSummary { (list) in
+            if (list?.count)! > 0 {
+                self.realmSummaryData = list!
+            }
+            self.tableView.refreshControl?.endRefreshing()
+        }
+    }
+    
+    private func requestRealmSummaryData() {
+        AHNetworkUtils.requestRealmsSummary { (list) in
+            if (list?.count)! > 0 {
+                self.realmSummaryData = list!
+            }
+        }
     }
 
 }

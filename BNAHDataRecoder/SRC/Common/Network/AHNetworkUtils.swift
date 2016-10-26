@@ -106,4 +106,21 @@ class AHNetworkUtils: NSObject {
             }
         }.resume()
     }
+    
+    public class func requestRealmsSummary(completionHandler: @escaping (NSArray?) -> Swift.Void) {
+        let session = URLSession.shared
+        session.configuration.requestCachePolicy = .useProtocolCachePolicy
+        let urlStr = kHostName + kApiAuctionSummmary
+        session.dataTask(with: URL(string: urlStr)!) { (data, URLResponse, Error) in
+            if let resultData = data {
+                let dataList = try? JSONSerialization.jsonObject(with: resultData, options: .mutableContainers) as! NSArray
+                completionHandler(dataList)
+                return
+            }
+            else {
+                completionHandler([])
+                return
+            }
+        }.resume()
+    }
 }

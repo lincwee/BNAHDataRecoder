@@ -27,6 +27,7 @@
 		5742324F1DAE16D2005D5931 /* BNAHDataRecoderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5742324E1DAE16D2005D5931 /* BNAHDataRecoderUITests.swift */; };
 		574232651DAE24AB005D5931 /* AHTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574232641DAE24AB005D5931 /* AHTabBarController.swift */; };
 		577EE07F1DAF674500288242 /* AHRadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577EE07E1DAF674500288242 /* AHRadioButtonView.swift */; };
+		57901FB51DBF8FC000E202A9 /* AHPreferRealmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57901FB41DBF8FC000E202A9 /* AHPreferRealmVC.swift */; };
 		57B2BA4D1DB0CD0A00A44C68 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B2BA4C1DB0CD0A00A44C68 /* SDWebImage.framework */; };
 		57B82B491DAE476A0074BD97 /* CommonDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B82B481DAE476A0074BD97 /* CommonDef.swift */; };
 		57C72C931DB75CA500B19AF9 /* AHAutoCompleteTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C72C921DB75CA500B19AF9 /* AHAutoCompleteTextFieldView.swift */; };
@@ -91,6 +92,7 @@
 		574232641DAE24AB005D5931 /* AHTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHTabBarController.swift; sourceTree = "<group>"; };
 		577EE07E1DAF674500288242 /* AHRadioButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHRadioButtonView.swift; sourceTree = "<group>"; };
 		57856D4D1DB616D700EC43AB /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Developer/Xcode/DerivedData/BNAHDataRecoder-ajskpmdutprfkxflmfxqejtdctwx/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		57901FB41DBF8FC000E202A9 /* AHPreferRealmVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHPreferRealmVC.swift; sourceTree = "<group>"; };
 		57B2BA4C1DB0CD0A00A44C68 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Pods/../build/Debug-iphoneos/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
 		57B82B481DAE476A0074BD97 /* CommonDef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDef.swift; sourceTree = "<group>"; };
 		57C72C921DB75CA500B19AF9 /* AHAutoCompleteTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHAutoCompleteTextFieldView.swift; sourceTree = "<group>"; };
@@ -305,6 +307,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		57AB5B8F1DBF693B00A9A5FF /* VO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VO;
+			sourceTree = "<group>";
+		};
 		57F0901D1DB3C08600E06BB1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +330,7 @@
 		57F864FE1DBCF42100775649 /* ServerPage */ = {
 			isa = PBXGroup;
 			children = (
+				57AB5B8F1DBF693B00A9A5FF /* VO */,
 				57F864FF1DBCF45900775649 /* View */,
 				57F865001DBCF45900775649 /* VC */,
 			);
@@ -340,6 +350,7 @@
 			children = (
 				57F865011DBCF49900775649 /* ServerVC.swift */,
 				57F865031DBCFF5500775649 /* AHServiceSearchVC.swift */,
+				57901FB41DBF8FC000E202A9 /* AHPreferRealmVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -633,6 +644,7 @@
 				5703AB7D1DB4B19900220D5B /* NSArray+Common.swift in Sources */,
 				5703AB8F1DB5D0B000220D5B /* AHCommonUtils.swift in Sources */,
 				5703AB8D1DB52C7300220D5B /* AHCreatedSubItemsView.swift in Sources */,
+				57901FB51DBF8FC000E202A9 /* AHPreferRealmVC.swift in Sources */,
 				5703AB8B1DB52C2E00220D5B /* HomeVC.swift in Sources */,
 				5703AB701DB4758E00220D5B /* AHNetworkUtils.swift in Sources */,
 				5703AB8A1DB52C2E00220D5B /* AHCreatedItemVC.swift in Sources */,

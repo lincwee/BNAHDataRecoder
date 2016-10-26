@@ -30,7 +30,7 @@ class AHTabBarController: UITabBarController, UITabBarControllerDelegate {
         
         let vc3 = ViewController()
         vc3.title = "我的"
-        let item3 = UITabBarItem.init(title: "我的", image: UIImage.imageFromIconfont(iconText: IconfontMine, size: 30, color: nil), tag: 3)
+        let item3 = UITabBarItem.init(title: "我的", image: UIImage.imageFromIconfont(iconText: IconfontMine, size: 30, color: nil), tag: 2)
         vc3.tabBarItem = item3
         item3.selectedImage = (UIImage.imageFromIconfont(iconText: IconfontMine, size: 30, color: nil))
         
@@ -40,9 +40,6 @@ class AHTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        
-        self.selectedIndex = 0
     }
     
 

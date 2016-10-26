@@ -17,6 +17,7 @@ enum AHItemImageSizeType {
 let AHItemDataCache = "itemDataCache"
 let AHRealmData = "realm_Data"
 let AHDefaultRealm = "default_realm"
+let AHPreferRealm = "prefer_realm"
 
 class AHCommonUtils: NSObject {
     
@@ -111,5 +112,66 @@ class AHCommonUtils: NSObject {
             UserDefaults.standard.set(newValue, forKey: AHDefaultRealm)
         }
     }
+    
+    class func getRealmData(name: String) -> NSDictionary? {
+        for item in realmList {
+            let realmName = (item as! NSDictionary).object(forKey: "name") as! String
+            if realmName == name {
+                return item as? NSDictionary
+            }
+        }
+        return nil
+    }
+    
+    
+    static var preferRealm: NSArray? {
+        get {
+            let value = UserDefaults.standard.object(forKey: AHPreferRealm) as? NSArray
+            if value == nil {
+                return []
+            }
+            else {
+                return value
+            }
+        }
+    }
+    
+    class func addPreferRealm(name: String) -> Bool {
+        for item in preferRealm! {
+            let itemName = item as! String
+            if itemName == name {
+                return false
+            }
+        }
+        let value = UserDefaults.standard.object(forKey: AHPreferRealm) as? NSArray
+        var mutableList = NSMutableArray(capacity: 0)
+        if let list = value {
+            mutableList = NSMutableArray(array: list)
+        }
+        mutableList.add(name)
+        UserDefaults.standard.set(mutableList, forKey: AHPreferRealm)
+        UserDefaults.standard.synchronize()
+        return true
+    }
+    
+    class func deletePreferRealm(name: String) -> Bool {
+        let value = UserDefaults.standard.object(forKey: AHPreferRealm) as? NSArray
+        var mutableList = NSMutableArray(capacity: 0)
+        if let list = value {
+            mutableList = NSMutableArray(array: list)
+        }
+        
+        for item in preferRealm! {
+            let itemName = item as! String
+            if itemName == name {
+                mutableList.remove(itemName)
+                UserDefaults.standard.set(mutableList, forKey: AHPreferRealm)
+                UserDefaults.standard.synchronize()
+                return true
+            }
+        }
+        return false
+    }
+       
     
 }
