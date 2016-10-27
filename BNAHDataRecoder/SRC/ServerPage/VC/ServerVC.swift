@@ -16,8 +16,12 @@ class ServerVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        navigationController?.navigationBar.isTranslucent = true
         
-        tableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height - kTabbarDefaultHeight))
+        let rootView = UIView.init(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
+        self.view.addSubview(rootView)
+        
+        tableView = UITableView.init(frame: CGRect(x: 0, y: kNaviTopViewH, width: self.view.width, height: self.view.height - kTabbarDefaultHeight))
         tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
@@ -26,14 +30,16 @@ class ServerVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         refreshControl.addTarget(self, action: #selector(refreshing), for: .valueChanged)
         tableView.refreshControl = refreshControl
         self.view.addSubview(tableView)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(updateDefaultRealm), name: NSNotification.Name.init(rawValue: kNotificationDefaultRealmChanged), object: nil)
-        
+
         searchVC = AHServiceSearchVC()
         self.tableView.tableHeaderView = searchVC.searchBar
-        
+
+        initNotification()
         requestRealmSummaryData()
         
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
 
     override func didReceiveMemoryWarning() {
@@ -105,6 +111,10 @@ class ServerVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
                 self.realmSummaryData = list!
             }
         }
+    }
+    
+    private func initNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateDefaultRealm), name: NSNotification.Name.init(rawValue: kNotificationDefaultRealmChanged), object: nil)
     }
 
 }
