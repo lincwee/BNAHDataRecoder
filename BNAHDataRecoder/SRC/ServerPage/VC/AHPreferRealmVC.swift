@@ -10,9 +10,12 @@ import UIKit
 
 class AHPreferRealmVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    private let kHeaderValue = CGFloat(50)
-    var tableView = UITableView()
-
+    public var realmSummaryList = NSArray()
+    public var tableView = UITableView()
+    
+    private let kHeaderValue = CGFloat(30)
+    private let preferRealmList = AHCommonUtils.preferRealm
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "偏好服务器"
@@ -40,7 +43,7 @@ class AHPreferRealmVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             return 1
         }
         if section == 1 {
-            return 3
+            return (preferRealmList?.count)!
         }
         else {
             return 0
@@ -67,13 +70,32 @@ class AHPreferRealmVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         return kHeaderValue
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return AHRealmDetailCell.cellHeight
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let flag = "preferCellFlag"
-        var cell = tableView.dequeueReusableCell(withIdentifier: flag)
+        var cell = tableView.dequeueReusableCell(withIdentifier: flag) as? AHRealmDetailCell
         if cell == nil {
-            cell = UITableViewCell.init(style: .default, reuseIdentifier: flag)
+            cell = AHRealmDetailCell.init(style: .default, reuseIdentifier: flag)
         }
-        cell?.textLabel?.text = "\(indexPath.row)"
+        if indexPath.section == 0 {
+            let defaultRealmId = AHCommonUtils.defaultRealm?["id"] as! Int
+            let index = defaultRealmId - 1
+           cell?.setRealmData(realmData: realmSummaryList[index] as! NSDictionary)
+        }
+        else if indexPath.section == 1 {
+            let itemRealmNativeData = AHCommonUtils.getRealmData(name: "\((preferRealmList?[indexPath.row])!)")
+            let idStr = "\((itemRealmNativeData?["id"])!)"
+            let itemIndex = Int(idStr)! - 1
+            
+            cell?.setRealmData(realmData: realmSummaryList[itemIndex] as! NSDictionary)
+        }
+        else {
+            
+        }
+       // cell?.textLabel?.text = "\(indexPath.row)"
         return cell!
     }
     
@@ -83,7 +105,7 @@ class AHPreferRealmVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         headerView.backgroundColor = UIColor.colorWithHex(hexValue: 0x63931d)
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = UIColor.colorWithHex(hexValue: 0x333333)
+        label.textColor = UIColor.white
         label.text = title
         label.sizeToFit()
         headerView.addSubview(label)

@@ -71,11 +71,19 @@ class AHServiceSearchVC: UISearchController, UITableViewDataSource, UITableViewD
         let defaultServetItem = AHCommonUtils.defaultRealm
         var text = cellListItem.object(forKey: "name")! as! String
         if cellListItem.isEqual(defaultServetItem) {
+            //default realm
             text += "(默认服务器)"
             cell?.textLabel?.textColor = UIColor.red
         }
         else {
-            cell?.textLabel?.textColor = UIColor.black
+            if (AHCommonUtils.preferRealm?.contains(text))! {
+                //prefer realm
+                text += "(偏好)"
+                cell?.textLabel?.textColor = UIColor.colorWithHex(hexValue: 0x1bb723)
+            }
+            else {
+                cell?.textLabel?.textColor = UIColor.black
+            }
         }
         cell?.textLabel?.text = text
         
@@ -114,12 +122,12 @@ class AHServiceSearchVC: UISearchController, UITableViewDataSource, UITableViewD
             let name = dic["name"] as! String
             if hasContainPrefer {
                 if AHCommonUtils.deletePreferRealm(name: name) {
-                    
+                    tableView.reloadData()
                 }
             }
             else {
                 if AHCommonUtils.addPreferRealm(name: name) {
-                    
+                    tableView.reloadData()
                 }
             }
         }

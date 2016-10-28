@@ -120,7 +120,17 @@ class AHCommonUtils: NSObject {
                 return item as? NSDictionary
             }
         }
-        return nil
+        return [:]
+    }
+    
+    class func getRealmData(id : Int) -> NSDictionary? {
+        for item in realmList {
+            let realmId = (item as! NSDictionary).object(forKey: "id") as! Int
+            if realmId == id {
+                return item as? NSDictionary
+            }
+        }
+        return [:]
     }
     
     

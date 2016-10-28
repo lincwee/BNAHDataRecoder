@@ -64,12 +64,15 @@ class ServerVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         }
         if indexPath.row == 0 {
             cell?.setCellData(data: ["title": "默认服务器", "subTitle": "\((AHCommonUtils.defaultRealm?.object(forKey: "name"))!)"])
+            cell?.accessoryType = .none
         }
         else if indexPath.row == 1 {
             cell?.setCellData(data: ["title": "偏好服务器"])
+            cell?.accessoryType = .disclosureIndicator
         }
         else {
             cell?.setCellData(data: ["title": "时光徽章"])
+            cell?.accessoryType = .disclosureIndicator
         }
         return cell!
     }
@@ -86,7 +89,9 @@ class ServerVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         }
         if indexPath.row == 1 {
             DispatchQueue.main.async {
-                self.navigationController?.pushViewController(AHPreferRealmVC(), animated: true)
+                let preferRealmVC = AHPreferRealmVC()
+                preferRealmVC.realmSummaryList = self.realmSummaryData
+                self.navigationController?.pushViewController(preferRealmVC, animated: true)
             }
         }
     }
