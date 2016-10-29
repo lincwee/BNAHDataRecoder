@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6FDD1C03D7617FB73B2B984F119E67E4AC3C82B4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6FDD1C03D7617FB73B2B984F119E67E4AC3C82B4" : 9223372036854775807,
+    "9025163822AAEA7A2D8AC9210D0874A56F62B462" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2CE8A01B-2012-4213-AB47-C0156B2C3832",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6FDD1C03D7617FB73B2B984F119E67E4AC3C82B4" : "BNAHDataRecoder\/",
+    "9025163822AAEA7A2D8AC9210D0874A56F62B462" : "BNAHDataRecoder\/BNAHDataRecoder\/SRC\/Framework\/Charts\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BNAHDataRecoder",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BNAHDataRecoder.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lincwee\/BNAHDataRecoder.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6FDD1C03D7617FB73B2B984F119E67E4AC3C82B4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/danielgindi\/Charts.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9025163822AAEA7A2D8AC9210D0874A56F62B462"
+    }
+  ]
+}

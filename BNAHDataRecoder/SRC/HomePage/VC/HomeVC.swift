@@ -60,15 +60,26 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
 
         itemInputView.resignFirstResponder()
         let value = itemInputView.textField.text! as String
-        let pinyinValue = value.applyingTransform(.toLatin, reverse: false)
-        print(pinyinValue!)
+//        let pinyinValue = value.applyingTransform(.toLatin, reverse: false)
+//        print(pinyinValue!)
         if value.characters.count == 0 {
-            return
+//            return
         }
         if radioIdex == 0 {
-            AHNetworkUtils.requestAuctionItem(realm: "158", name: value) { (listData) in
-                print(listData?.objectSafe(index: 0))
+            DispatchQueue.main.async {
+                let itemPriceVC = AHItemPriceVC()
+                self.title = "价格查询"
+                self.navigationController?.pushViewController(itemPriceVC, animated: true)
             }
+            return
+//            AHNetworkUtils.requestAuctionItem(realm: "158", name: value) { (listData) in
+//                
+//                DispatchQueue.main.async {
+//                    let itemPriceVC = AHItemPriceVC()
+//                    self.title = "价格查询"
+//                    self.navigationController?.pushViewController(itemPriceVC, animated: true)
+//                }
+//            }
         }
         else {
             SVProgressHUD.show(withStatus: "正在加载")
