@@ -67,7 +67,7 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
         }
         if radioIdex == 0 {
             DispatchQueue.main.async {
-                let itemPriceVC = AHItemPriceVC()
+                let itemPriceVC = AHItemPriceVC(itemName: value)
                 self.title = "价格查询"
                 self.navigationController?.pushViewController(itemPriceVC, animated: true)
             }
@@ -83,7 +83,7 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
         }
         else {
             SVProgressHUD.show(withStatus: "正在加载")
-            AHNetworkUtils.requestItem(realm: "158", name: value, completionHandler: { (dicData) in
+            AHNetworkUtils.requestItem(name: value, completionHandler: { (dicData) in
                 SVProgressHUD.dismiss()
                 if dicData ==  nil {
                     return

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5701BB2B1DC4798A009981D1 /* AHDateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701BB2A1DC4798A009981D1 /* AHDateHandler.swift */; };
 		5703AB701DB4758E00220D5B /* AHNetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703AB6F1DB4758E00220D5B /* AHNetworkUtils.swift */; };
 		5703AB7D1DB4B19900220D5B /* NSArray+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703AB7C1DB4B19900220D5B /* NSArray+Common.swift */; };
 		5703AB8A1DB52C2E00220D5B /* AHCreatedItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703AB881DB52C2E00220D5B /* AHCreatedItemVC.swift */; };
@@ -119,6 +120,7 @@
 		0CE015FCB365C60E1B0EE428 /* Pods-BNAHDataRecoder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BNAHDataRecoder.release.xcconfig"; path = "Pods/Target Support Files/Pods-BNAHDataRecoder/Pods-BNAHDataRecoder.release.xcconfig"; sourceTree = "<group>"; };
 		18895C46C0D34830B352FD9C /* Pods_BNAHDataRecoderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BNAHDataRecoderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D9FCE890BB33E735FDE82E /* Pods_BNAHDataRecoder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BNAHDataRecoder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5701BB2A1DC4798A009981D1 /* AHDateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHDateHandler.swift; sourceTree = "<group>"; };
 		5703AB6F1DB4758E00220D5B /* AHNetworkUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHNetworkUtils.swift; sourceTree = "<group>"; };
 		5703AB7C1DB4B19900220D5B /* NSArray+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSArray+Common.swift"; sourceTree = "<group>"; };
 		5703AB881DB52C2E00220D5B /* AHCreatedItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHCreatedItemVC.swift; sourceTree = "<group>"; };
@@ -208,6 +210,14 @@
 				18895C46C0D34830B352FD9C /* Pods_BNAHDataRecoderUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5701BB251DC478F2009981D1 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				5701BB2A1DC4798A009981D1 /* AHDateHandler.swift */,
+			);
+			path = Date;
 			sourceTree = "<group>";
 		};
 		5703AB861DB52C2E00220D5B /* View */ = {
@@ -345,6 +355,7 @@
 		574232601DAE1A4B005D5931 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5701BB251DC478F2009981D1 /* Date */,
 				57F0901D1DB3C08600E06BB1 /* Extensions */,
 				577EE07D1DAF671800288242 /* View */,
 			);
@@ -753,6 +764,7 @@
 				57F090231DB3C0C700E06BB1 /* UIColor+Common.swift in Sources */,
 				57C72C931DB75CA500B19AF9 /* AHAutoCompleteTextFieldView.swift in Sources */,
 				57B82B491DAE476A0074BD97 /* CommonDef.swift in Sources */,
+				5701BB2B1DC4798A009981D1 /* AHDateHandler.swift in Sources */,
 				574232311DAE16D2005D5931 /* ViewController.swift in Sources */,
 				5703AB7D1DB4B19900220D5B /* NSArray+Common.swift in Sources */,
 				5703AB8F1DB5D0B000220D5B /* AHCommonUtils.swift in Sources */,

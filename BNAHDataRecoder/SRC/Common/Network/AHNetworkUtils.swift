@@ -9,29 +9,8 @@
 import UIKit
 
 class AHNetworkUtils: NSObject {
-    public class func requestAuctionItem(realm: String, name: String, completionHandler: @escaping (NSArray?) -> Swift.Void){
-        AHNetworkUtils.requestItem(realm: realm, name: name) { (resultData) in
-            if resultData != nil {
-                return
-            }
-            let urlRealmItemStr = kHostName + kApiAuctionRealm + realm + "/item/" + "\(resultData?["id"]!)"
-            
-            let urlRealmItem = URL(string: urlRealmItemStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
-            let session = URLSession.shared
-            session.dataTask(with: urlRealmItem!, completionHandler: { (data, response, errpr) in
-                if let resultRealmData = data {
-                    let realmItemList = try? JSONSerialization.jsonObject(with: resultRealmData, options: .allowFragments) as! NSArray
-                    completionHandler(realmItemList)
-                }
-                else {
-                    completionHandler(nil)
-                }
-            }).resume()
- 
-        }
-    }
     
-    public class func requestItem(realm: String, name: String, completionHandler: @escaping (NSDictionary?) -> Swift.Void){
+    public class func requestItem(name: String, completionHandler: @escaping (NSDictionary?) -> Swift.Void){
         let session = URLSession.shared
         session.configuration.requestCachePolicy = .useProtocolCachePolicy
         let urtStr = kHostName + kApiItem + name
@@ -54,9 +33,32 @@ class AHNetworkUtils: NSObject {
             }.resume()
     }
     
+    
+    public class func requestAuctionItem(realm: String, name: String, completionHandler: @escaping (NSArray?) -> Swift.Void){
+        AHNetworkUtils.requestItem(name: name) { (resultData) in
+            if resultData == nil {
+                return
+            }
+            let urlRealmItemStr = kHostName + kApiAuctionRealm + realm + "/item/" + "\(resultData?["id"]!)"
+            
+            let urlRealmItem = URL(string: urlRealmItemStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
+            let session = URLSession.shared
+            session.dataTask(with: urlRealmItem!, completionHandler: { (data, response, errpr) in
+                if let resultRealmData = data {
+                    let realmItemList = try? JSONSerialization.jsonObject(with: resultRealmData, options: .allowFragments) as! NSArray
+                    completionHandler(realmItemList)
+                }
+                else {
+                    completionHandler(nil)
+                }
+            }).resume()
+ 
+        }
+    }
+    
     public class func requestItemAuctionMinPrice(realm: String, name: String, completionHandler: @escaping (NSDictionary?) -> Swift.Void) {
 
-        AHNetworkUtils.requestItem(realm: realm, name: name) { (itemDataDic) in
+        AHNetworkUtils.requestItem(name: name) { (itemDataDic) in
             if itemDataDic == nil {
                 completionHandler(nil)
                 return
@@ -107,6 +109,7 @@ class AHNetworkUtils: NSObject {
         }.resume()
     }
     
+    // all realm auction summary data
     public class func requestRealmsSummary(completionHandler: @escaping (NSArray?) -> Swift.Void) {
         let session = URLSession.shared
         session.configuration.requestCachePolicy = .useProtocolCachePolicy
@@ -122,5 +125,29 @@ class AHNetworkUtils: NSObject {
                 return
             }
         }.resume()
+    }
+    
+    // target realm&item data
+    public class func requestItemHistoryData(name: String, realmId: String, completionHandler : @escaping (NSArray?) -> Swift.Void) {
+        AHNetworkUtils.requestItem(name: name) { (resultData) in
+            if resultData == nil {
+                return
+            }
+            
+            let urlStr = kHostName + kApiAuctionHistory + "158" + "/item/" + "\((resultData?["id"])!)"
+            let session = URLSession.shared
+            session.configuration.requestCachePolicy = .useProtocolCachePolicy
+            session.dataTask(with: URL(string: urlStr)!, completionHandler: { (data, request, error) in
+                if let dataResult = data {
+                    let dataList = try? JSONSerialization.jsonObject(with: dataResult, options: .mutableContainers) as! NSArray
+                    
+                    completionHandler(dataList)
+                }
+                else {
+                    completionHandler([])
+                }
+            }).resume()
+            
+        }
     }
 }
