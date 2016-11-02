@@ -113,6 +113,27 @@ class AHCommonUtils: NSObject {
         }
     }
     
+    public class var defaultRealmID : Int? {
+        get {
+            let realmID = AHCommonUtils.defaultRealm?["id"] as! Int
+            return realmID
+        }
+    }
+    
+    public class var defaultRealmIDStr : String? {
+        get {
+            let realmID = AHCommonUtils.defaultRealm?["id"] as! Int
+            return "\(realmID)"
+        }
+    }
+    
+    public class var defaultRealmName : String? {
+        get {
+            let realmName = AHCommonUtils.defaultRealm?["name"] as! String
+            return realmName
+        }
+    }
+    
     class func getRealmData(name: String) -> NSDictionary? {
         for item in realmList {
             let realmName = (item as! NSDictionary).object(forKey: "name") as! String

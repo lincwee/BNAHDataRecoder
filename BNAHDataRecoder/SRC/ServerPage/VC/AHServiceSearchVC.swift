@@ -99,7 +99,7 @@ class AHServiceSearchVC: UISearchController, UITableViewDataSource, UITableViewD
         let serverData = filterRealmData.objectSafe(index: indexPath.row) as! NSDictionary
         self.searchBar.resignFirstResponder()
         let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
-        let dic = self.realmData.objectSafe(index: indexPath.row) as! NSDictionary
+        let dic = self.filterRealmData.objectSafe(index: indexPath.row) as! NSDictionary
         let realmName = (dic["name"] as! String)
         alert.addButton("查看服务器详情") {
             self.isActive = false

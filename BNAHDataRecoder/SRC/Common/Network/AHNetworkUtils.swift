@@ -131,10 +131,11 @@ class AHNetworkUtils: NSObject {
     public class func requestItemHistoryData(name: String, realmId: String, completionHandler : @escaping (NSArray?) -> Swift.Void) {
         AHNetworkUtils.requestItem(name: name) { (resultData) in
             if resultData == nil {
+                completionHandler([])
                 return
             }
             
-            let urlStr = kHostName + kApiAuctionHistory + "158" + "/item/" + "\((resultData?["id"])!)"
+            let urlStr = kHostName + kApiAuctionHistory + realmId + "/item/" + "\((resultData?["id"])!)"
             let session = URLSession.shared
             session.configuration.requestCachePolicy = .useProtocolCachePolicy
             session.dataTask(with: URL(string: urlStr)!, completionHandler: { (data, request, error) in
@@ -148,6 +149,28 @@ class AHNetworkUtils: NSObject {
                 }
             }).resume()
             
+        }
+    }
+    public class func requestItemPastData(name: String, realmId: String, completionHandler : @escaping (NSArray?) -> Swift.Void) {
+        AHNetworkUtils.requestItem(name: name) { (resultData) in
+            if resultData == nil {
+                completionHandler([])
+                return
+            }
+            
+            let urlStr = kHostName + kApiAuctionPast + realmId + "/item/" + "\((resultData?["id"])!)"
+            let session = URLSession.shared
+            session.configuration.requestCachePolicy = .useProtocolCachePolicy
+            session.dataTask(with: URL(string: urlStr)!, completionHandler: { (data, response, error) in
+                if let dataResult = data {
+                    let dataList = try? JSONSerialization.jsonObject(with: dataResult, options: .mutableContainers) as! NSArray
+                    
+                    completionHandler(dataList)
+                }
+                else {
+                    completionHandler([])
+                }
+            }).resume()
         }
     }
 }

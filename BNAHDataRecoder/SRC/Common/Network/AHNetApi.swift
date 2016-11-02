@@ -22,5 +22,6 @@ let kApiAuctionRealms = "auction/realms/summary"
 let kApiAuctionItem = "auction/item/"
 let kApiAuctionSummmary = "auction/realms/summary"
 let kApiAuctionHistory = "auction/history/realm/"
+let kApiAuctionPast = "auction/past/realm/"
 
 //  wowtoken

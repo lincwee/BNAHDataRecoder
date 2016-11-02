@@ -170,7 +170,7 @@ class AHCreatedSubItemsView: UIView {
         minUnitPriceLabel.right = minTotalPriceLabel.right
         minUnitPriceLabel.bottom = minTotalPriceLabel.top - 2
         
-        AHNetworkUtils.requestItemAuctionMinPrice(realm: "158", name: "\(subItemData["name"]!)") { (dic) in
+        AHNetworkUtils.requestItemAuctionMinPrice(realm: AHCommonUtils.defaultRealmIDStr!, name: "\(subItemData["name"]!)") { (dic) in
             if let resultDic = dic {
                 let unitPriceStr = resultDic["minPrice"] as! String
                 let totalPrice = Int64(unitPriceStr)! * subItemCount.int64Value

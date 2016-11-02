@@ -43,10 +43,12 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
         buttonSearch.width = 140
         buttonSearch.height = 30
         buttonSearch.backgroundColor = UIColor.colorWithHexStr(hexStr: "#8abd25", alpha: 1)
-        buttonSearch.center = CGPoint(x: itemInputView.centerX, y: itemInputView.bottom + 190)
+        buttonSearch.setBackgroundImage(UIImage.imageFromColor(color: UIColor.colorWithHex(hexValue: 0xaaaaaa)), for: .disabled)
+        buttonSearch.center = CGPoint(x: itemInputView.centerX, y: itemInputView.bottom + 170)
         buttonSearch.setTitle("搜索", for: .normal)
         buttonSearch.addTarget(self, action: #selector(onSearchClicked(button:)), for: .touchUpInside)
         self.view.addSubview(buttonSearch)
+        buttonSearch.isEnabled = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -63,7 +65,7 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
 //        let pinyinValue = value.applyingTransform(.toLatin, reverse: false)
 //        print(pinyinValue!)
         if value.characters.count == 0 {
-//            return
+            return
         }
         if radioIdex == 0 {
             DispatchQueue.main.async {
@@ -107,6 +109,8 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
     
     // AHAutoCompleteTextFieldViewDelegate
     func textDidChange(textFieldView: AHAutoCompleteTextFieldView, text: String) {
+        
+        buttonSearch.isEnabled = text.characters.count > 0
         AHNetworkUtils.requestGetItemNames(name: text) { (data) in
             DispatchQueue.main.async {
                 if let dataList = data {
