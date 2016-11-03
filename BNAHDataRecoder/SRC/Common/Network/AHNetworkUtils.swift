@@ -174,6 +174,21 @@ class AHNetworkUtils: NSObject {
         }
     }
     
+    public class func requestWowToken(completionHandler: @escaping (NSArray?) -> Void) {
+        let urlStr = kHostName + kApiWowToken
+        let session = URLSession.shared
+        session.configuration.requestCachePolicy = .useProtocolCachePolicy
+        session.dataTask(with: URL(string: urlStr)!, completionHandler:{ (data, response, error) in
+            if let dataResult = data {
+                let dataList = try? JSONSerialization.jsonObject(with: dataResult, options: .mutableContainers) as! NSArray
+                completionHandler(dataList)
+            }
+            else {
+                completionHandler([])
+            }
+        }).resume()
+    }
+    
     //MARK:- BattleNet api
     
     public class func requestItemFromBattleNet(name: String, completionHandler: @escaping (NSDictionary?)->Void) {

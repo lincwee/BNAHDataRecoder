@@ -19,6 +19,7 @@
 		570D54661DB9FED100199C0C /* IconfontTextDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570D54651DB9FED100199C0C /* IconfontTextDef.swift */; };
 		570D54681DBA052400199C0C /* UIImage+Iconfont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570D54671DBA052400199C0C /* UIImage+Iconfont.swift */; };
 		5714D4CE1DB8C5BC00BEA8D5 /* UIImage+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714D4CD1DB8C5BC00BEA8D5 /* UIImage+Common.swift */; };
+		572415801DCAE6F900BDF78B /* AHWowTokenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5724157F1DCAE6F900BDF78B /* AHWowTokenVC.swift */; };
 		5742322F1DAE16D2005D5931 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5742322E1DAE16D2005D5931 /* AppDelegate.swift */; };
 		574232311DAE16D2005D5931 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574232301DAE16D2005D5931 /* ViewController.swift */; };
 		574232341DAE16D2005D5931 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 574232321DAE16D2005D5931 /* Main.storyboard */; };
@@ -133,6 +134,7 @@
 		570D54651DB9FED100199C0C /* IconfontTextDef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconfontTextDef.swift; sourceTree = "<group>"; };
 		570D54671DBA052400199C0C /* UIImage+Iconfont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Iconfont.swift"; sourceTree = "<group>"; };
 		5714D4CD1DB8C5BC00BEA8D5 /* UIImage+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Common.swift"; sourceTree = "<group>"; };
+		5724157F1DCAE6F900BDF78B /* AHWowTokenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHWowTokenVC.swift; sourceTree = "<group>"; };
 		5742322B1DAE16D2005D5931 /* BNAHDataRecoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BNAHDataRecoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5742322E1DAE16D2005D5931 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		574232301DAE16D2005D5931 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 				57F865011DBCF49900775649 /* ServerVC.swift */,
 				57F865031DBCFF5500775649 /* AHServiceSearchVC.swift */,
 				57901FB41DBF8FC000E202A9 /* AHPreferRealmVC.swift */,
+				5724157F1DCAE6F900BDF78B /* AHWowTokenVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -777,6 +780,7 @@
 				57B82B491DAE476A0074BD97 /* CommonDef.swift in Sources */,
 				5701BB2B1DC4798A009981D1 /* AHDateHandler.swift in Sources */,
 				574232311DAE16D2005D5931 /* ViewController.swift in Sources */,
+				572415801DCAE6F900BDF78B /* AHWowTokenVC.swift in Sources */,
 				5703AB7D1DB4B19900220D5B /* NSArray+Common.swift in Sources */,
 				5703AB8F1DB5D0B000220D5B /* AHCommonUtils.swift in Sources */,
 				57C92AFE1DC9D895001C7195 /* AHImageDef.swift in Sources */,

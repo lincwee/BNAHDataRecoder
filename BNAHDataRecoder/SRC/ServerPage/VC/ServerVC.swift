@@ -94,6 +94,13 @@ class ServerVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
                 self.navigationController?.pushViewController(preferRealmVC, animated: true)
             }
         }
+        
+        if indexPath.row == 2 {
+            DispatchQueue.main.async {
+                let wowTokenVC = AHWowTokenVC()
+                self.navigationController?.pushViewController(wowTokenVC, animated: true)
+            }
+        }
     }
     
     //MARK:- private method

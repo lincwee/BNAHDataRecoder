@@ -26,6 +26,7 @@ let kApiAuctionHistory = "auction/history/realm/"
 let kApiAuctionPast = "auction/past/realm/"
 
 //  wowtoken
+let kApiWowToken = "ah/wowtokens"
 
 
 //battleNet api
