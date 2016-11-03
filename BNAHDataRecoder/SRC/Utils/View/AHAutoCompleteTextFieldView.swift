@@ -13,6 +13,8 @@ let kAutoCompleteCellHeight = CGFloat(30)
 
 protocol AHAutoCompleteTextFieldViewDelegate{
     func textDidChange(textFieldView: AHAutoCompleteTextFieldView, text: String)
+    
+    func autoTextShouldReturn(textFieldView: AHAutoCompleteTextFieldView, text: String)
 }
 
 class AHAutoCompleteTextFieldView: UIView, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
@@ -109,6 +111,11 @@ class AHAutoCompleteTextFieldView: UIView, UITableViewDelegate, UITableViewDataS
         tableView.deselectRow(at: indexPath, animated: true)
         textField.text = _listACData.objectSafe(index: indexPath.row) as? String
         autoCompleteView.isHidden = true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        delegate?.autoTextShouldReturn(textFieldView: self, text: textField.text!)
+        return false
     }
 
 }

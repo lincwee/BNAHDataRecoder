@@ -173,4 +173,40 @@ class AHNetworkUtils: NSObject {
             }).resume()
         }
     }
+    
+    //MARK:- BattleNet api
+    
+    public class func requestItemFromBattleNet(name: String, completionHandler: @escaping (NSDictionary?)->Void) {
+        AHNetworkUtils.requestItem(name: name) { (resultData) in
+            if resultData == nil {
+                return
+            }
+            let session = URLSession.shared
+            session.configuration.requestCachePolicy = .useProtocolCachePolicy
+            let urtStr = kHostBattleNetTWName + "item/" + "\((resultData?["id"])!)" + "?locale=\(kApiBattleNetLocale)&apikey=\(kApiBattleNetKey)"
+            let getItemURL = URL(string: urtStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
+            session.dataTask(with: getItemURL!) { (data, response, error) in
+                if let resultData = data {
+                    let result = try? JSONSerialization.jsonObject(with: resultData, options: .allowFragments) as! NSDictionary
+                    if let resultData = result{
+                        completionHandler(resultData)
+                    }
+                    else {
+                        print("data has no value")
+                        completionHandler(nil)
+                    }
+                }
+                else {
+                    print("no value")
+                    completionHandler(nil)
+                }
+                }.resume()
+        }
+        
+        
+        
+   
+    }
 }
+
+

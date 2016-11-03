@@ -12,7 +12,7 @@ import SVProgressHUD
 
 let kChartsHeight = CGFloat(230)
 let kChartsViewHeight = kChartsHeight + 5
-let kItemDetailHeaderHeight = CGFloat(200)
+let kItemDetailHeaderHeight = CGFloat(100)
 
 class AHItemPriceVC: UIViewController,
     IAxisValueFormatter,
@@ -22,6 +22,7 @@ UITableViewDataSource {
 
     var chart = BarChartView()
     var sortedList = NSArray()
+    let itemDetailView = UIView()
     var pastItemList = NSArray()
     let tableView = UITableView()
     let rightTableView = UITableView()
@@ -54,6 +55,8 @@ UITableViewDataSource {
         tableView.tag = 0
         self.view.addSubview(tableView)
         self.view.backgroundColor = UIColor.colorWithHex(hexValue: 0xddddddd)
+       
+        initDetailView()
         refreshNavibarView()
         initLeftView()
         refreshAuctionData()
@@ -131,6 +134,41 @@ UITableViewDataSource {
         self.view.addSubview(rightTableView)
         rightTableView.bringSubview(toFront: tableView)
     }
+    
+    private func initDetailView() {
+        itemDetailView.frame = CGRect(x: 0, y: 0, width: kScreenW, height: kItemDetailHeaderHeight)
+        itemDetailView.backgroundColor = UIColor.colorWithHex(hexValue: 0xeeeeeee)
+        
+        let nameLabel = UILabel()
+        nameLabel.font = UIFont.systemFont(ofSize: 20)
+        nameLabel.textColor = UIColor.black
+        nameLabel.text = _itemName
+        nameLabel.sizeToFit()
+        nameLabel.left = 100
+        nameLabel.top = 10
+        itemDetailView.addSubview(nameLabel)
+        let desLabel = UILabel(frame: CGRect(x: nameLabel.left, y: nameLabel.bottom + 5, width: self.itemDetailView.width - 110, height: kItemDetailHeaderHeight - 45))
+        self.itemDetailView.addSubview(desLabel)
+        desLabel.numberOfLines = 0
+        desLabel.font = UIFont.systemFont(ofSize: 14)
+        desLabel.textColor = UIColor.lightGray
+        desLabel.text = "加载中..."
+        
+        let iconImage = UIImageView.init(frame: CGRect(x: 10, y: 10, width: 67, height: 67))
+        iconImage.image = UIImage(named: kAHImageDefault)
+        self.itemDetailView.addSubview(iconImage)
+        
+        AHNetworkUtils.requestItemFromBattleNet(name: _itemName) { (dic) in
+            let iconStr = dic?["icon"] as! String
+            let descriptionStr = dic?["description"] as! String
+        
+            DispatchQueue.main.async {
+                desLabel.text = descriptionStr.characters.count == 0 ? "暂无详情" : descriptionStr
+                iconImage.sd_setImage(with: AHCommonUtils.getImageUrl(name: iconStr, sizeType: .iTemSize56), placeholderImage: UIImage(named: kAHImageDefault))
+                
+            }
+        }
+    }
 
     
     private func setCharts(list: NSArray?) {
@@ -155,7 +193,7 @@ UITableViewDataSource {
             self.chart = BarChartView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: kChartsHeight))
             self.chart.leftAxis.axisMinimum = 0.0
             self.chart.rightAxis.axisMinimum = 0.0
-            self.chart.chartDescription?.text = "物品价格列表"
+            self.chart.chartDescription?.text = ""
             self.chart.scaleYEnabled = false
             
             self.chart.data = data
@@ -239,7 +277,7 @@ UITableViewDataSource {
         
         if section == 1 {
             let view = UIView.init(frame: CGRect(x: 0, y: 0, width: kScreenW, height: kTableViewHeaderHeight))
-            view.backgroundColor = UIColor.lightGray
+            view.backgroundColor = UIColor.colorWithHex(hexValue: 0x2f89cc)
             view.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(headerSelected)))
             let textLabel = UILabel()
             textLabel.textColor = UIColor.white
@@ -274,9 +312,8 @@ UITableViewDataSource {
             return view
         }
         else if section == 0 {
-            let view = UIView.init(frame: CGRect(x: 0, y: 0, width: kScreenW, height: kItemDetailHeaderHeight))
-            view.backgroundColor = UIColor.colorWithHex(hexValue: 0xeeeeeee)
-            return view
+//            view.backgroundColor = UIColor.colorWithHex(hexValue: 0xeeeeeee)
+            return itemDetailView
         }
         else {
             return nil
@@ -334,8 +371,8 @@ UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //tag == 2
-        if tableView.tag == 2 {
+        //tag == 1
+        if tableView.tag == 1 {
             let flag = "rightItemFlag"
             var cell = tableView.dequeueReusableCell(withIdentifier: flag)
             if cell == nil {
@@ -356,7 +393,7 @@ UITableViewDataSource {
             return cell!
         }
         
-        // tag == 1
+        // tag == 0
         if indexPath.section == 1 {
             if self.isShowCharts {
                 let firstFlag = "fistSection"

@@ -37,6 +37,7 @@
 		57C0284E1DC33F9A000699CF /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57C028431DC33CA9000699CF /* Charts.framework */; };
 		57C0284F1DC33F9A000699CF /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57C028431DC33CA9000699CF /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		57C72C931DB75CA500B19AF9 /* AHAutoCompleteTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C72C921DB75CA500B19AF9 /* AHAutoCompleteTextFieldView.swift */; };
+		57C92AFE1DC9D895001C7195 /* AHImageDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C92AFD1DC9D895001C7195 /* AHImageDef.swift */; };
 		57C96C6C1DBE18C900B90ABB /* AHServerItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C96C6B1DBE18C900B90ABB /* AHServerItemCell.swift */; };
 		57F0901F1DB3C08600E06BB1 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0901E1DB3C08600E06BB1 /* UIView+Layout.swift */; };
 		57F090231DB3C0C700E06BB1 /* UIColor+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F090221DB3C0C700E06BB1 /* UIColor+Common.swift */; };
@@ -155,6 +156,7 @@
 		57B82B481DAE476A0074BD97 /* CommonDef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDef.swift; sourceTree = "<group>"; };
 		57C0283C1DC33CA9000699CF /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		57C72C921DB75CA500B19AF9 /* AHAutoCompleteTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHAutoCompleteTextFieldView.swift; sourceTree = "<group>"; };
+		57C92AFD1DC9D895001C7195 /* AHImageDef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHImageDef.swift; sourceTree = "<group>"; };
 		57C96C6B1DBE18C900B90ABB /* AHServerItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHServerItemCell.swift; sourceTree = "<group>"; };
 		57F0901E1DB3C08600E06BB1 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		57F090221DB3C0C700E06BB1 /* UIColor+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Common.swift"; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 		5742325D1DAE1A4B005D5931 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				57C92AFA1DC9D881001C7195 /* Image */,
 				574232631DAE2468005D5931 /* AppRoot */,
 				5742325E1DAE1A4B005D5931 /* Network */,
 				57B82B481DAE476A0074BD97 /* CommonDef.swift */,
@@ -402,6 +405,14 @@
 				57C028471DC33CA9000699CF /* ChartsTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		57C92AFA1DC9D881001C7195 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				57C92AFD1DC9D895001C7195 /* AHImageDef.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 		57F0901D1DB3C08600E06BB1 /* Extensions */ = {
@@ -768,6 +779,7 @@
 				574232311DAE16D2005D5931 /* ViewController.swift in Sources */,
 				5703AB7D1DB4B19900220D5B /* NSArray+Common.swift in Sources */,
 				5703AB8F1DB5D0B000220D5B /* AHCommonUtils.swift in Sources */,
+				57C92AFE1DC9D895001C7195 /* AHImageDef.swift in Sources */,
 				5703AB8D1DB52C7300220D5B /* AHCreatedSubItemsView.swift in Sources */,
 				57901FB51DBF8FC000E202A9 /* AHPreferRealmVC.swift in Sources */,
 				5703AB8B1DB52C2E00220D5B /* HomeVC.swift in Sources */,

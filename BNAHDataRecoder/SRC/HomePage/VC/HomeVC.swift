@@ -32,19 +32,22 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
         radioButton.delegate = self
         self.view.addSubview(radioButton)
         
-        itemInputView = AHAutoCompleteTextFieldView.init(frame: CGRect(x: 0, y: 0, width: 240, height: 30))
+        let inputViewW = kScreenW / 3 * 2
+        itemInputView = AHAutoCompleteTextFieldView.init(frame: CGRect(x: 0, y: 0, width: inputViewW, height: 30))
         itemInputView.textField.backgroundColor = UIColor.colorWithHex(hexValue: 0xdddddd)
-        itemInputView.centerX = self.view.width / 2
+        itemInputView.left = 15
         itemInputView.top = radioButton.bottom + 20
         itemInputView.delegate = self
         itemInputView.textField.placeholder = kSearchItemPlaceplaceholderStr
+        itemInputView.textField.returnKeyType = .search
         self.view.addSubview(itemInputView)
         
-        buttonSearch.width = 140
-        buttonSearch.height = 30
+        buttonSearch.width = kScreenW - inputViewW - 30
+        buttonSearch.height = itemInputView.height
         buttonSearch.backgroundColor = UIColor.colorWithHexStr(hexStr: "#8abd25", alpha: 1)
         buttonSearch.setBackgroundImage(UIImage.imageFromColor(color: UIColor.colorWithHex(hexValue: 0xaaaaaa)), for: .disabled)
-        buttonSearch.center = CGPoint(x: itemInputView.centerX, y: itemInputView.bottom + 170)
+        buttonSearch.left = itemInputView.right
+        buttonSearch.top = itemInputView.top
         buttonSearch.setTitle("搜索", for: .normal)
         buttonSearch.addTarget(self, action: #selector(onSearchClicked(button:)), for: .touchUpInside)
         self.view.addSubview(buttonSearch)
@@ -121,5 +124,9 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
                 }
             }
         }
+    }
+    
+    func autoTextShouldReturn(textFieldView: AHAutoCompleteTextFieldView, text: String) {
+        onSearchClicked(button: nil)
     }
 }
