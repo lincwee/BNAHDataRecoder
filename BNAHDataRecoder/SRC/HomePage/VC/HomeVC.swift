@@ -16,6 +16,27 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
     var buttonSelectedIndex : NSInteger?
     var itemInputView = AHAutoCompleteTextFieldView()
     var radioIdex : NSInteger = 0
+    var topTenSearchView = UIView()
+    var topTenHotView = UIView()
+    var historyList : NSArray {
+        get {
+            let historyData = AHRealmHelper.realm(ofType: AHHistorySearchItem.self)
+            let mList = NSMutableArray()
+            let maxItem = 10
+            var tag = 0
+            for item in historyData! {
+                if tag < maxItem {
+                    let itemName = (item as! AHHistorySearchItem).name
+                    mList.add(itemName)
+                    tag += 1
+                }
+                else {
+                    break
+                }
+            }
+            return mList
+        }
+    }
     
     let kSearchItemPlaceplaceholderStr = "搜索物品"
     let kCreatedMetplaceholderStr = "搜索制造物品的材料"
@@ -53,6 +74,18 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
         buttonSearch.addTarget(self, action: #selector(onSearchClicked(button:)), for: .touchUpInside)
         self.view.addSubview(buttonSearch)
         buttonSearch.isEnabled = false
+        
+//        let rect = CGRect(x: 0, y: 0, width: self.view.width / 2, height: 300)
+//        topTenSearchView = AHTopTenView.init(frame: rect, dataList: [1,2,3,4,5,6,7,8,9,0], title: "热门物品")
+//        topTenSearchView.top = buttonSearch.bottom + 20
+//        topTenSearchView.left = 0
+//        self.view.addSubview(topTenSearchView)
+        
+//        let rect1 = CGRect(x: 0, y: 0, width: self.view.width / 2, height: 300)
+//        topTenHotView = AHTopTenView.init(frame: rect1, dataList: [1,2,3,4,5,6,7,8,9,0], title: "搜索历史")
+//        topTenHotView.top = topTenSearchView.top
+//        topTenHotView.left = topTenSearchView.right
+//        self.view.addSubview(topTenHotView)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -64,7 +97,7 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
     
     func onSearchClicked(button : UIButton!) -> Void {
 
-        itemInputView.resignFirstResponder()
+        itemInputView.textField.resignFirstResponder()
         let value = itemInputView.textField.text! as String
 //        let pinyinValue = value.applyingTransform(.toLatin, reverse: false)
 //        print(pinyinValue!)
@@ -78,14 +111,6 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
                 self.navigationController?.pushViewController(itemPriceVC, animated: true)
             }
             return
-//            AHNetworkUtils.requestAuctionItem(realm: "158", name: value) { (listData) in
-//                
-//                DispatchQueue.main.async {
-//                    let itemPriceVC = AHItemPriceVC()
-//                    self.title = "价格查询"
-//                    self.navigationController?.pushViewController(itemPriceVC, animated: true)
-//                }
-//            }
         }
         else {
             SVProgressHUD.show(withStatus: "正在加载")
@@ -112,22 +137,62 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
     }
     
     // AHAutoCompleteTextFieldViewDelegate
-    func textDidChange(textFieldView: AHAutoCompleteTextFieldView, text: String) {
+    func textDidChange(textFieldView: AHAutoCompleteTextFieldView, text: String, isAutoComplete: Bool) {
+        let isHasText = text.characters.count > 0
+        buttonSearch.isEnabled = isHasText
+        //if is auto complete
+        if isAutoComplete {
+            return
+        }
         
-        buttonSearch.isEnabled = text.characters.count > 0
-        AHNetworkUtils.requestGetItemNames(name: text) { (data) in
-            DispatchQueue.main.async {
-                if let dataList = data {
-                    self.itemInputView.setAutoCompleteData(dataList: dataList)
-                }
-                else {
-                    self.itemInputView.setAutoCompleteData(dataList: [])
+        //if not auto, just about text is or not
+        if isHasText {
+            AHNetworkUtils.requestGetItemNames(name: text) { (data) in
+                DispatchQueue.main.async {
+                    if let dataList = data {
+                        self.itemInputView.setAutoCompleteData(dataList: dataList)
+                        self.itemInputView.textStyle = .defaultStyle
+                    }
+                    else {
+                        self.itemInputView.setAutoCompleteData(dataList: [])
+                    }
                 }
             }
+        }
+        else {
+            // load self search word
+            self.itemInputView.setAutoCompleteData(dataList: historyList)
+            self.itemInputView.textStyle = .lightBlueStyle
         }
     }
     
     func autoTextShouldReturn(textFieldView: AHAutoCompleteTextFieldView, text: String) {
         onSearchClicked(button: nil)
+    }
+    
+    func autoTextDidEdit(edit: Bool, text: String) {
+        if text.characters.count > 0 {
+            AHNetworkUtils.requestGetItemNames(name: text) { (data) in
+                DispatchQueue.main.async {
+                    if let dataList = data {
+                        self.itemInputView.setAutoCompleteData(dataList: dataList)
+                        self.itemInputView.textStyle = .defaultStyle
+                    }
+                    else {
+                        self.itemInputView.setAutoCompleteData(dataList: [])
+                    }
+                }
+            }
+        }
+        else {
+            if edit {
+                self.itemInputView.setAutoCompleteData(dataList: historyList)
+                self.itemInputView.textStyle = .lightBlueStyle
+            }
+            else {
+                self.itemInputView.setAutoCompleteData(dataList: [])
+                self.itemInputView.textStyle = .lightBlueStyle
+            }
+        }
     }
 }

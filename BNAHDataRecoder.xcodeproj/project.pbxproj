@@ -20,6 +20,9 @@
 		570D54681DBA052400199C0C /* UIImage+Iconfont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570D54671DBA052400199C0C /* UIImage+Iconfont.swift */; };
 		5714D4CE1DB8C5BC00BEA8D5 /* UIImage+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714D4CD1DB8C5BC00BEA8D5 /* UIImage+Common.swift */; };
 		572415801DCAE6F900BDF78B /* AHWowTokenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5724157F1DCAE6F900BDF78B /* AHWowTokenVC.swift */; };
+		5724158E1DCB400600BDF78B /* AHRealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5724158D1DCB400600BDF78B /* AHRealmHelper.swift */; };
+		572415901DCC300100BDF78B /* AHHistorySearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5724158F1DCC300100BDF78B /* AHHistorySearchItem.swift */; };
+		572415921DCC818A00BDF78B /* AHTopTenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572415911DCC818A00BDF78B /* AHTopTenView.swift */; };
 		5742322F1DAE16D2005D5931 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5742322E1DAE16D2005D5931 /* AppDelegate.swift */; };
 		574232311DAE16D2005D5931 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574232301DAE16D2005D5931 /* ViewController.swift */; };
 		574232341DAE16D2005D5931 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 574232321DAE16D2005D5931 /* Main.storyboard */; };
@@ -135,6 +138,9 @@
 		570D54671DBA052400199C0C /* UIImage+Iconfont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Iconfont.swift"; sourceTree = "<group>"; };
 		5714D4CD1DB8C5BC00BEA8D5 /* UIImage+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Common.swift"; sourceTree = "<group>"; };
 		5724157F1DCAE6F900BDF78B /* AHWowTokenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHWowTokenVC.swift; sourceTree = "<group>"; };
+		5724158D1DCB400600BDF78B /* AHRealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHRealmHelper.swift; sourceTree = "<group>"; };
+		5724158F1DCC300100BDF78B /* AHHistorySearchItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHHistorySearchItem.swift; sourceTree = "<group>"; };
+		572415911DCC818A00BDF78B /* AHTopTenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHTopTenView.swift; sourceTree = "<group>"; };
 		5742322B1DAE16D2005D5931 /* BNAHDataRecoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BNAHDataRecoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5742322E1DAE16D2005D5931 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		574232301DAE16D2005D5931 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				5703AB8C1DB52C7300220D5B /* AHCreatedSubItemsView.swift */,
+				572415911DCC818A00BDF78B /* AHTopTenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -258,6 +265,22 @@
 				570D54631DB9FE9E00199C0C /* iconfontTabbar.ttf */,
 			);
 			path = Iconfont;
+			sourceTree = "<group>";
+		};
+		572415871DCB390C00BDF78B /* VO */ = {
+			isa = PBXGroup;
+			children = (
+				5724158F1DCC300100BDF78B /* AHHistorySearchItem.swift */,
+			);
+			path = VO;
+			sourceTree = "<group>";
+		};
+		5724158C1DCB3FC200BDF78B /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				5724158D1DCB400600BDF78B /* AHRealmHelper.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		574232221DAE16D2005D5931 = {
@@ -330,6 +353,7 @@
 		5742325D1DAE1A4B005D5931 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				572415871DCB390C00BDF78B /* VO */,
 				57C92AFA1DC9D881001C7195 /* Image */,
 				574232631DAE2468005D5931 /* AppRoot */,
 				5742325E1DAE1A4B005D5931 /* Network */,
@@ -360,6 +384,7 @@
 		574232601DAE1A4B005D5931 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5724158C1DCB3FC200BDF78B /* Realm */,
 				5701BB251DC478F2009981D1 /* Date */,
 				57F0901D1DB3C08600E06BB1 /* Extensions */,
 				577EE07D1DAF671800288242 /* View */,
@@ -784,6 +809,7 @@
 				5703AB7D1DB4B19900220D5B /* NSArray+Common.swift in Sources */,
 				5703AB8F1DB5D0B000220D5B /* AHCommonUtils.swift in Sources */,
 				57C92AFE1DC9D895001C7195 /* AHImageDef.swift in Sources */,
+				572415901DCC300100BDF78B /* AHHistorySearchItem.swift in Sources */,
 				5703AB8D1DB52C7300220D5B /* AHCreatedSubItemsView.swift in Sources */,
 				57901FB51DBF8FC000E202A9 /* AHPreferRealmVC.swift in Sources */,
 				5703AB8B1DB52C2E00220D5B /* HomeVC.swift in Sources */,
@@ -800,7 +826,9 @@
 				57F865041DBCFF5500775649 /* AHServiceSearchVC.swift in Sources */,
 				5714D4CE1DB8C5BC00BEA8D5 /* UIImage+Common.swift in Sources */,
 				57F0901F1DB3C08600E06BB1 /* UIView+Layout.swift in Sources */,
+				5724158E1DCB400600BDF78B /* AHRealmHelper.swift in Sources */,
 				577EE07F1DAF674500288242 /* AHRadioButtonView.swift in Sources */,
+				572415921DCC818A00BDF78B /* AHTopTenView.swift in Sources */,
 				570D54681DBA052400199C0C /* UIImage+Iconfont.swift in Sources */,
 				57717F5B1DC0D90100E4C6F4 /* AHRealmDetailCell.swift in Sources */,
 			);

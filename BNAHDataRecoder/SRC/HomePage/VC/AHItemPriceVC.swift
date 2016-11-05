@@ -55,7 +55,8 @@ UITableViewDataSource {
         tableView.tag = 0
         self.view.addSubview(tableView)
         self.view.backgroundColor = UIColor.colorWithHex(hexValue: 0xddddddd)
-       
+//        AHRealmHelper.deleteAll()
+        AHRealmHelper.addHistory(itemName: _itemName)
         initDetailView()
         refreshNavibarView()
         initLeftView()
@@ -67,15 +68,16 @@ UITableViewDataSource {
     private func refreshAuctionData() {
         SVProgressHUD.show(withStatus: "正在加载...")
         let dicRealm = AHCommonUtils.getRealmData(name: _realmName!)
-        let idStr = dicRealm?["id"] as! Int
 
-        AHNetworkUtils.requestItemPastData(name: self._itemName, realmId: "\(idStr)") { (list) in
+        let id = dicRealm?["id"] as! Int
+        
+        AHNetworkUtils.requestItemPastData(name: self._itemName, realmId: "\(id)") { (list) in
             self.pastItemList = list!
             //                            NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:2];
             DispatchQueue.main.async {
                 self.tableView.reloadSections(IndexSet.init(integer: 2), with: .automatic)
             }
-            AHNetworkUtils.requestItemHistoryData(name: self._itemName, realmId: "\(idStr)"){ (list) in
+            AHNetworkUtils.requestItemHistoryData(name: self._itemName, realmId: "\(id)"){ (list) in
                 let sortedList = list?.sorted(by: { (it1, it2) -> Bool in
                     let timeStamp1 =  (it1 as! NSArray).objectSafe(index: 2) as! Int64
                     let timeStamp2 = (it2 as! NSArray).objectSafe(index: 2) as! Int64
@@ -161,7 +163,7 @@ UITableViewDataSource {
         AHNetworkUtils.requestItemFromBattleNet(name: _itemName) { (dic) in
             let iconStr = dic?["icon"] as! String
             let descriptionStr = dic?["description"] as! String
-        
+            
             DispatchQueue.main.async {
                 desLabel.text = descriptionStr.characters.count == 0 ? "暂无详情" : descriptionStr
                 iconImage.sd_setImage(with: AHCommonUtils.getImageUrl(name: iconStr, sizeType: .iTemSize56), placeholderImage: UIImage(named: kAHImageDefault))

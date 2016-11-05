@@ -23,5 +23,9 @@ class AHDateHandler: NSObject {
         return dateStr
     }
     
+    class func currentTimeStamp() -> Double {
+        return Date.init(timeIntervalSinceNow: 0).timeIntervalSince1970
+    }
+    
     
 }

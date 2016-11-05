@@ -20,6 +20,7 @@ target 'BNAHDataRecoder' do
   pod 'IQKeyboardManager'
   pod 'SVProgressHUD'
   pod 'SCLAlertView'
+  pod 'RealmSwift'
 
   # Pods for BNAHDataRecoder
 

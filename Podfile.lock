@@ -1,5 +1,10 @@
 PODS:
   - IQKeyboardManager (4.0.6)
+  - Realm (2.0.2):
+    - Realm/Headers (= 2.0.2)
+  - Realm/Headers (2.0.2)
+  - RealmSwift (2.0.2):
+    - Realm (= 2.0.2)
   - SCLAlertView (0.7.0)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
@@ -8,16 +13,19 @@ PODS:
 
 DEPENDENCIES:
   - IQKeyboardManager
+  - RealmSwift
   - SCLAlertView
   - SDWebImage
   - SVProgressHUD
 
 SPEC CHECKSUMS:
   IQKeyboardManager: c52debb1967799ae7addb98eab0cf328083a874f
+  Realm: 0f5a194af0b7e6158b83db41b4ee1a00be7ddf1a
+  RealmSwift: 0eb5070d851cba7c66e841ca756d83609dc78bc8
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: c30b48ed991f2f1494c06de39d0a02990b0311e2
+PODFILE CHECKSUM: 291ecd295802213159eb148f3ed20590be60fbf1
 
 COCOAPODS: 1.0.1
