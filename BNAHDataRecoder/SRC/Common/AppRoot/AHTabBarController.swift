@@ -14,12 +14,12 @@ class AHTabBarController: UITabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
         self.delegate = self
         let vc1 = HomeVC()
-        let item1 = UITabBarItem.init(title: "首页", image: UIImage.imageFromIconfont(iconText: IconfontHot, size: 30, color: nil), tag: 0)
+        let item1 = UITabBarItem.init(title: "首页", image: UIImage.imageFromIconfont(iconText: IconfontHome, size: 30, color: nil), tag: 0)
         vc1.tabBarItem = item1
         vc1.title = "首页"
         //first init
         self.title = "首页"
-        item1.selectedImage = (UIImage.imageFromIconfont(iconText: IconfontHot, size: 30, color: nil))
+        item1.selectedImage = (UIImage.imageFromIconfont(iconText: IconfontHome, size: 30, color: nil))
         
         
         let vc2 = ServerVC()

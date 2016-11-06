@@ -11,3 +11,6 @@ import Foundation
 let IconfontHot = "\u{f072}"
 let IconfontWatchSheet = "\u{f112}"
 let IconfontMine = "\u{f32c}"
+let IconfontHistory = "\u{f1f8}"
+let IconfontHome = "\u{f228}"
+

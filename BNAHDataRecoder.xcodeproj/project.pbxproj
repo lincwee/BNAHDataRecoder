@@ -15,7 +15,6 @@
 		5703AB8D1DB52C7300220D5B /* AHCreatedSubItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703AB8C1DB52C7300220D5B /* AHCreatedSubItemsView.swift */; };
 		5703AB8F1DB5D0B000220D5B /* AHCommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703AB8E1DB5D0B000220D5B /* AHCommonUtils.swift */; };
 		570D54621DB9FD8A00199C0C /* realm.json in Resources */ = {isa = PBXBuildFile; fileRef = 570D54611DB9FD8A00199C0C /* realm.json */; };
-		570D54641DB9FE9E00199C0C /* iconfontTabbar.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 570D54631DB9FE9E00199C0C /* iconfontTabbar.ttf */; };
 		570D54661DB9FED100199C0C /* IconfontTextDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570D54651DB9FED100199C0C /* IconfontTextDef.swift */; };
 		570D54681DBA052400199C0C /* UIImage+Iconfont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570D54671DBA052400199C0C /* UIImage+Iconfont.swift */; };
 		5714D4CE1DB8C5BC00BEA8D5 /* UIImage+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714D4CD1DB8C5BC00BEA8D5 /* UIImage+Common.swift */; };
@@ -49,6 +48,8 @@
 		57F090271DB3D05000E06BB1 /* AHNetApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F090261DB3D05000E06BB1 /* AHNetApi.swift */; };
 		57F865021DBCF49900775649 /* ServerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F865011DBCF49900775649 /* ServerVC.swift */; };
 		57F865041DBCFF5500775649 /* AHServiceSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F865031DBCFF5500775649 /* AHServiceSearchVC.swift */; };
+		57FFCA3E1DCDD7B7008F7D86 /* AHFlowItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FFCA3D1DCDD7B7008F7D86 /* AHFlowItemView.swift */; };
+		57FFCA421DCDEA14008F7D86 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57FFCA411DCDEA14008F7D86 /* iconfont.ttf */; };
 		89F4050028A92DAC28CB82B8 /* Pods_BNAHDataRecoderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C31F4F8F5A07517B6AE1349 /* Pods_BNAHDataRecoderTests.framework */; };
 		B6BB70633E1984692E0031E5 /* Pods_BNAHDataRecoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D9FCE890BB33E735FDE82E /* Pods_BNAHDataRecoder.framework */; };
 		B8F9AD6A9E038941CD2E5E42 /* Pods_BNAHDataRecoderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18895C46C0D34830B352FD9C /* Pods_BNAHDataRecoderUITests.framework */; };
@@ -133,7 +134,6 @@
 		5703AB8C1DB52C7300220D5B /* AHCreatedSubItemsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHCreatedSubItemsView.swift; sourceTree = "<group>"; };
 		5703AB8E1DB5D0B000220D5B /* AHCommonUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHCommonUtils.swift; sourceTree = "<group>"; };
 		570D54611DB9FD8A00199C0C /* realm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = realm.json; sourceTree = "<group>"; };
-		570D54631DB9FE9E00199C0C /* iconfontTabbar.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfontTabbar.ttf; sourceTree = "<group>"; };
 		570D54651DB9FED100199C0C /* IconfontTextDef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconfontTextDef.swift; sourceTree = "<group>"; };
 		570D54671DBA052400199C0C /* UIImage+Iconfont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Iconfont.swift"; sourceTree = "<group>"; };
 		5714D4CD1DB8C5BC00BEA8D5 /* UIImage+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Common.swift"; sourceTree = "<group>"; };
@@ -172,6 +172,8 @@
 		57F090261DB3D05000E06BB1 /* AHNetApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHNetApi.swift; sourceTree = "<group>"; };
 		57F865011DBCF49900775649 /* ServerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerVC.swift; sourceTree = "<group>"; };
 		57F865031DBCFF5500775649 /* AHServiceSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHServiceSearchVC.swift; sourceTree = "<group>"; };
+		57FFCA3D1DCDD7B7008F7D86 /* AHFlowItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHFlowItemView.swift; sourceTree = "<group>"; };
+		57FFCA411DCDEA14008F7D86 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
 		5AA874BCC477249B50DA571D /* Pods-BNAHDataRecoderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BNAHDataRecoderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BNAHDataRecoderTests/Pods-BNAHDataRecoderTests.release.xcconfig"; sourceTree = "<group>"; };
 		7A923480ACDC2C523F015DE4 /* Pods-BNAHDataRecoder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BNAHDataRecoder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BNAHDataRecoder/Pods-BNAHDataRecoder.debug.xcconfig"; sourceTree = "<group>"; };
 		7B0B87A2B7AC6C5C8BEF433E /* Pods-BNAHDataRecoderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BNAHDataRecoderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BNAHDataRecoderTests/Pods-BNAHDataRecoderTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			children = (
 				5703AB8C1DB52C7300220D5B /* AHCreatedSubItemsView.swift */,
 				572415911DCC818A00BDF78B /* AHTopTenView.swift */,
+				57FFCA3D1DCDD7B7008F7D86 /* AHFlowItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -262,7 +265,7 @@
 		570D54601DB9FD8A00199C0C /* Iconfont */ = {
 			isa = PBXGroup;
 			children = (
-				570D54631DB9FE9E00199C0C /* iconfontTabbar.ttf */,
+				57FFCA411DCDEA14008F7D86 /* iconfont.ttf */,
 			);
 			path = Iconfont;
 			sourceTree = "<group>";
@@ -650,9 +653,9 @@
 			files = (
 				574232391DAE16D2005D5931 /* LaunchScreen.storyboard in Resources */,
 				574232361DAE16D2005D5931 /* Assets.xcassets in Resources */,
+				57FFCA421DCDEA14008F7D86 /* iconfont.ttf in Resources */,
 				574232341DAE16D2005D5931 /* Main.storyboard in Resources */,
 				570D54621DB9FD8A00199C0C /* realm.json in Resources */,
-				570D54641DB9FE9E00199C0C /* iconfontTabbar.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -826,6 +829,7 @@
 				57F865041DBCFF5500775649 /* AHServiceSearchVC.swift in Sources */,
 				5714D4CE1DB8C5BC00BEA8D5 /* UIImage+Common.swift in Sources */,
 				57F0901F1DB3C08600E06BB1 /* UIView+Layout.swift in Sources */,
+				57FFCA3E1DCDD7B7008F7D86 /* AHFlowItemView.swift in Sources */,
 				5724158E1DCB400600BDF78B /* AHRealmHelper.swift in Sources */,
 				577EE07F1DAF674500288242 /* AHRadioButtonView.swift in Sources */,
 				572415921DCC818A00BDF78B /* AHTopTenView.swift in Sources */,

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AHRadioButtonViewDelegate {
-    func didSelectedIndex(index: NSInteger)
+    func didSelectedIndex(radioButtonView: AHRadioButtonView,index: NSInteger)
 }
 
 class AHRadioButtonView: UIView {
@@ -27,7 +27,23 @@ class AHRadioButtonView: UIView {
     }
     
     public var selectedItemColor : UIColor = UIColor.black
-    public var disSelecteddisableItemColor : UIColor = UIColor.red
+    private var _disSelecteddisableItemColor = UIColor.red
+    public var disSelecteddisableItemColor : UIColor{
+        set {
+            _disSelecteddisableItemColor = newValue
+            
+            for button in buttonList {
+                (button as! UIButton).setTitleColor(_disSelecteddisableItemColor, for: .highlighted)
+                (button as! UIButton).setTitleColor(_disSelecteddisableItemColor, for: .selected)
+                (button as! UIButton).setTitleColor(_disSelecteddisableItemColor, for: .disabled)
+            }
+            
+        }
+        
+        get {
+            return _disSelecteddisableItemColor
+        }
+    }
     private var _selectedBg : UIColor  = UIColor.lightGray
     public var selectedBackgroundColor : UIColor {
         set {
@@ -45,6 +61,17 @@ class AHRadioButtonView: UIView {
     var buttonList = NSMutableArray()
     var delegate: AHRadioButtonViewDelegate?
     
+    private var _textFont = UIFont.systemFont(ofSize: 14)
+    var textFont : UIFont {
+        get {
+            return _textFont
+        }
+        
+        set {
+            _textFont = newValue
+            initButton()
+        }
+    }
     
     public init(frame: CGRect, itemNameList: NSArray) {
         super.init(frame: frame)
@@ -67,6 +94,7 @@ class AHRadioButtonView: UIView {
             let button = UIButton.init(frame: CGRect(x: startX, y: 0, width: buttonW, height: self.height))
             button.setTitle(name as? String, for: .normal)
             button.setTitleColor(selectedItemColor, for: .normal)
+            button.titleLabel?.font = textFont
             button.setTitleColor(disSelecteddisableItemColor, for: .highlighted)
             button.setTitleColor(disSelecteddisableItemColor, for: .selected)
             button.setTitleColor(disSelecteddisableItemColor, for: .disabled)
@@ -95,6 +123,6 @@ class AHRadioButtonView: UIView {
             }
         }
  
-        delegate?.didSelectedIndex(index: button.tag)
+        delegate?.didSelectedIndex(radioButtonView: self, index: button.tag)
     }
 }

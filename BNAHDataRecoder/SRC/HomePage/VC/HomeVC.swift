@@ -10,7 +10,7 @@ import UIKit
 import SDWebImage
 import SVProgressHUD
 
-class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFieldViewDelegate {
+class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFieldViewDelegate, AHFlowItemViewDelegate {
 
     var buttonSearch = UIButton()
     var buttonSelectedIndex : NSInteger?
@@ -18,6 +18,17 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
     var radioIdex : NSInteger = 0
     var topTenSearchView = UIView()
     var topTenHotView = UIView()
+    var hotItemView = UIScrollView()
+    var topRadioButtonView : AHRadioButtonView?
+    var hotTypeRadioButtonView : AHRadioButtonView?
+    var floatItemView : AHFlowItemView?
+    
+    private var hotItemMouthList = NSMutableArray()
+    private var hotItemWeekList = NSMutableArray()
+    private var hotItemDayList = NSMutableArray()
+    
+    var hotItemDic = NSDictionary()
+    
     var historyList : NSArray {
         get {
             let historyData = AHRealmHelper.realm(ofType: AHHistorySearchItem.self)
@@ -47,18 +58,19 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
         self.view.backgroundColor = UIColor.white
         SVProgressHUD.setDefaultMaskType(.black)
         
-        let radioButton = AHRadioButtonView.init(frame: CGRect.init(x: 0, y: kNaviTopViewH, width: self.view.width, height: 40), itemNameList: ["物品查询", "制造材料"])
-        radioButton.backgroundColor = UIColor.colorWithHex(hexValue: 0xdddddd)
-        radioButton.selectedBackgroundColor = UIColor.white
+        topRadioButtonView = AHRadioButtonView.init(frame: CGRect.init(x: 0, y: kNaviTopViewH, width: self.view.width, height: 40), itemNameList: ["物品查询", "制造材料"])
+        topRadioButtonView?.backgroundColor = UIColor.colorWithHex(hexValue: 0xdddddd)
+        topRadioButtonView?.selectedBackgroundColor = UIColor.white
+        topRadioButtonView?.disSelecteddisableItemColor = UIColor.colorWithHex(hexValue: 0x333333)
         
-        radioButton.delegate = self
-        self.view.addSubview(radioButton)
+        topRadioButtonView?.delegate = self
+        self.view.addSubview(topRadioButtonView!)
         
         let inputViewW = kScreenW / 3 * 2
         itemInputView = AHAutoCompleteTextFieldView.init(frame: CGRect(x: 0, y: 0, width: inputViewW, height: 30))
         itemInputView.textField.backgroundColor = UIColor.colorWithHex(hexValue: 0xdddddd)
         itemInputView.left = 15
-        itemInputView.top = radioButton.bottom + 20
+        itemInputView.top = (topRadioButtonView?.bottom)! + 20
         itemInputView.delegate = self
         itemInputView.textField.placeholder = kSearchItemPlaceplaceholderStr
         itemInputView.textField.returnKeyType = .search
@@ -74,25 +86,84 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
         buttonSearch.addTarget(self, action: #selector(onSearchClicked(button:)), for: .touchUpInside)
         self.view.addSubview(buttonSearch)
         buttonSearch.isEnabled = false
-        
-//        let rect = CGRect(x: 0, y: 0, width: self.view.width / 2, height: 300)
-//        topTenSearchView = AHTopTenView.init(frame: rect, dataList: [1,2,3,4,5,6,7,8,9,0], title: "热门物品")
-//        topTenSearchView.top = buttonSearch.bottom + 20
-//        topTenSearchView.left = 0
-//        self.view.addSubview(topTenSearchView)
-        
-//        let rect1 = CGRect(x: 0, y: 0, width: self.view.width / 2, height: 300)
-//        topTenHotView = AHTopTenView.init(frame: rect1, dataList: [1,2,3,4,5,6,7,8,9,0], title: "搜索历史")
-//        topTenHotView.top = topTenSearchView.top
-//        topTenHotView.left = topTenSearchView.right
-//        self.view.addSubview(topTenHotView)
+
+        initHotItemsView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
-        override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    func initHotItemsView() {
+        let hotItemViewTop = buttonSearch.bottom + 30
+        hotItemView.frame = CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height - hotItemViewTop)
+        self.view.addSubview(hotItemView)
+        hotItemView.backgroundColor = UIColor.colorWithHex(hexValue: 0xe0e0e0)
+        hotItemView.top = hotItemViewTop
+        
+        //type radio button
+        hotTypeRadioButtonView = AHRadioButtonView.init(frame: CGRect.init(x: 0, y: 10, width: self.view.width / 2, height: 15), itemNameList: ["每月", "每周","每天"])
+        hotTypeRadioButtonView?.backgroundColor = UIColor.clear
+        hotTypeRadioButtonView?.selectedBackgroundColor = UIColor.clear
+        hotItemView.addSubview(hotTypeRadioButtonView!)
+        hotTypeRadioButtonView?.delegate = self
+        hotTypeRadioButtonView?.textFont = UIFont.systemFont(ofSize: 12)
+        hotTypeRadioButtonView?.disSelecteddisableItemColor = themeColor
+        hotTypeRadioButtonView?.right = hotItemView.width - 10
+        
+        // hot image
+        let hotImageView = UIImageView(image: UIImage.imageFromIconfont(iconText: IconfontHot, size: 20, color: UIColor.red))
+        hotItemView.addSubview(hotImageView)
+        hotImageView.left = 10
+        hotImageView.centerY = (hotTypeRadioButtonView?.centerY)!
+        
+        let labelHot = UILabel()
+        labelHot.font = UIFont.systemFont(ofSize: 15)
+        labelHot.textColor = UIColor.red
+        labelHot.text = "热门物品"
+        labelHot.sizeToFit()
+        hotItemView.addSubview(labelHot)
+        labelHot.left = hotImageView.right + 5
+        labelHot.centerY = hotImageView.centerY
+        
+        self.floatItemView = AHFlowItemView(frame: CGRect(x: 0, y: 0, width: self.view.width, height: 90),
+                                            items: [])
+        self.hotItemView.addSubview(self.floatItemView!)
+        self.floatItemView?.delegate = self
+        self.floatItemView?.top = (self.hotTypeRadioButtonView?.bottom)! + 13
+        
+        AHNetworkUtils.requestHotItems { (list) in
+            if let dataList = list {
+                self.hotItemMouthList = NSMutableArray(array: dataList.subarray(with: NSRange.init(location: 0, length: 10)))
+                self.hotItemWeekList = NSMutableArray(array: dataList.subarray(with: NSRange.init(location: 10, length: 10)))
+                self.hotItemDayList = NSMutableArray(array: dataList.subarray(with: NSRange.init(location: 20, length: 10)))
+
+                self.hotFloatViewRefresh(index: 0)
+            }
+        }
+    }
+    
+    private func hotFloatViewRefresh(index: Int) {
+        let hotNameList = NSMutableArray(capacity: 10)
+        var targetList = NSArray()
+        switch index {
+        case 0:
+            targetList = self.hotItemMouthList
+        case 1:
+            targetList = self.hotItemWeekList
+        case 2:
+            targetList = self.hotItemDayList
+        default:
+            targetList = self.hotItemMouthList
+        }
+        for item in targetList {
+            let dicItem = item as! NSDictionary
+            let name = dicItem["name"] as! String
+            hotNameList.add(name)
+        }
+        DispatchQueue.main.async {
+            self.floatItemView?.refreshWithItems(items: hotNameList)
+        }
     }
     
     func onSearchClicked(button : UIButton!) -> Void {
@@ -107,7 +178,7 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
         if radioIdex == 0 {
             DispatchQueue.main.async {
                 let itemPriceVC = AHItemPriceVC(itemName: value)
-                self.title = "价格查询"
+                self.title = "首页"
                 self.navigationController?.pushViewController(itemPriceVC, animated: true)
             }
             return
@@ -129,14 +200,20 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
         }
     }
     
-    // AHRadioButtonViewDelegate
-    func didSelectedIndex(index: NSInteger) {
-        radioIdex = index
-        let placeHolder = index == 0 ? kSearchItemPlaceplaceholderStr : kCreatedMetplaceholderStr
-        itemInputView.textField.placeholder = placeHolder
+    //MARK:- AHRadioButtonViewDelegate
+    func didSelectedIndex(radioButtonView: AHRadioButtonView,index: NSInteger) {
+        if radioButtonView == topRadioButtonView  {
+            radioIdex = index
+            let placeHolder = index == 0 ? kSearchItemPlaceplaceholderStr : kCreatedMetplaceholderStr
+            itemInputView.textField.placeholder = placeHolder
+        }
+        
+        if radioButtonView == hotTypeRadioButtonView {
+               self.hotFloatViewRefresh(index: index)
+        }
     }
     
-    // AHAutoCompleteTextFieldViewDelegate
+    //MARK:- AHAutoCompleteTextFieldViewDelegate
     func textDidChange(textFieldView: AHAutoCompleteTextFieldView, text: String, isAutoComplete: Bool) {
         let isHasText = text.characters.count > 0
         buttonSearch.isEnabled = isHasText
@@ -194,5 +271,13 @@ class HomeVC: UIViewController, AHRadioButtonViewDelegate, AHAutoCompleteTextFie
                 self.itemInputView.textStyle = .lightBlueStyle
             }
         }
+    }
+    
+    //MARK:- AHFlowItemViewDelegate
+    
+    func didSelectedItem(flowView: AHFlowItemView, index: Int) {
+        let name = flowView.itemsList[index] as! String
+        self.itemInputView.textField.text = name
+        self.textDidChange(textFieldView: self.itemInputView, text: name, isAutoComplete: false)
     }
 }

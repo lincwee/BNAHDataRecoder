@@ -4,7 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>iconfontTabbar.ttf</string>
+		<string>iconfont.ttf</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
@@ -43,6 +43,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	
 </dict>
 </plist>

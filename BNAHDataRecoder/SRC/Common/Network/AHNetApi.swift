@@ -16,6 +16,7 @@ let kHostName = "http://www.bnade.com/wow/"
 //  item
 let kApiItem = "item/name/"    //param: {name}
 let kApiItemNames = "item/names?term="
+let kApiHot = "item/hot"
 
 //  auction
 let kApiAuctionRealm = "auction/realm/"
